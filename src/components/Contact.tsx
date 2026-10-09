@@ -14,7 +14,7 @@ export default function Contact() {
   const [form, setForm] = useState({
     name: '', email: '', phone: '', services: '', message: '',
   });
-  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'saved' | 'error'>('idle');
   const { ref, visible } = useScrollReveal();
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -22,24 +22,21 @@ export default function Contact() {
     setStatus('sending');
 
     try {
-      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-      const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://ppjrzmessketofsmmopj.supabase.co';
       const apiUrl = `${supabaseUrl}/functions/v1/send-contact-email`;
 
       const response = await fetch(apiUrl, {
         method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${supabaseAnonKey}`,
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to send message');
+      const result: { success?: boolean; emailSent?: boolean; error?: string } = await response.json();
+      if (!response.ok || result.success !== true) {
+        throw new Error(result.error || 'Failed to send message');
       }
 
-      setStatus('sent');
+      setStatus(result.emailSent === false ? 'saved' : 'sent');
       setForm({ name: '', email: '', phone: '', services: '', message: '' });
       setTimeout(() => setStatus('idle'), 5000);
     } catch {
@@ -161,7 +158,7 @@ export default function Contact() {
               {/* Submit */}
               <button
                 type="submit"
-                disabled={status === 'sending' || status === 'sent'}
+                disabled={status === 'sending' || status === 'sent' || status === 'saved'}
                 className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-accent-500 text-white font-semibold text-sm hover:bg-accent-600 transition-colors duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {status === 'idle' && (
@@ -173,6 +170,9 @@ export default function Contact() {
                 {status === 'sent' && (
                   <><CheckCircle2 size={16} /> Message Sent!</>
                 )}
+                {status === 'saved' && (
+                  <><CheckCircle2 size={16} /> Inquiry Saved</>
+                )}
                 {status === 'error' && (
                   <><AlertCircle size={16} /> Failed — Try Again</>
                 )}
@@ -181,6 +181,11 @@ export default function Contact() {
               {status === 'sent' && (
                 <p className="text-center text-sm text-green-600 font-medium animate-fade-in">
                   Thanks! I'll get back to you within 24 hours.
+                </p>
+              )}
+              {status === 'saved' && (
+                <p className="text-center text-sm text-amber-600 font-medium animate-fade-in">
+                  Your inquiry was saved. The email notification will be delivered shortly.
                 </p>
               )}
               {status === 'error' && (

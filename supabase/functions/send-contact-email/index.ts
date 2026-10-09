@@ -1,3 +1,5 @@
+import { createClient } from "npm:@supabase/supabase-js@2.57.4";
+
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
@@ -9,6 +11,7 @@ interface ContactFormData {
   email: string;
   phone?: string;
   services?: string;
+  subject?: string;
   message: string;
 }
 
@@ -178,31 +181,79 @@ Deno.serve(async (req: Request) => {
     const data: ContactFormData = await req.json();
     const name = data.name?.trim();
     const email = data.email?.trim();
+    const phone = data.phone?.trim() || null;
+    const service = data.services?.trim() || null;
+    const subject = data.subject?.trim() || "New Project Inquiry | Fiza Web Studio";
     const message = data.message?.trim();
 
-    if (!name || !email || !message) {
+    if (!name || !email || !message || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return new Response(
-        JSON.stringify({ error: "Name, email, and message are required" }),
+        JSON.stringify({ error: "Please provide a valid name, email, and message" }),
         { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } },
       );
     }
 
+    if (name.length > 120 || email.length > 320 || subject.length > 180 || message.length > 10000) {
+      return new Response(
+        JSON.stringify({ error: "One or more fields are too long" }),
+        { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+      );
+    }
+
+    const supabaseUrl = Deno.env.get("SUPABASE_URL");
+    const serviceRoleKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
     const gmailUser = Deno.env.get("GMAIL_USER");
     const gmailPassword = Deno.env.get("GMAIL_APP_PASSWORD");
 
-    if (!gmailUser || !gmailPassword) {
+    if (!supabaseUrl || !serviceRoleKey || !gmailUser || !gmailPassword) {
       return new Response(
-        JSON.stringify({ error: "Email service is not ready" }),
+        JSON.stringify({ error: "Contact service is not ready" }),
         { status: 503, headers: { ...corsHeaders, "Content-Type": "application/json" } },
       );
     }
 
-    await sendEmail({ ...data, name, email, message }, gmailUser, gmailPassword);
+    const supabase = createClient(supabaseUrl, serviceRoleKey);
+    const { data: submission, error: insertError } = await supabase
+      .from("contact_submissions")
+      .insert({ name, email, phone, subject, service, message })
+      .select("id")
+      .maybeSingle();
 
-    return new Response(
-      JSON.stringify({ success: true }),
-      { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } },
-    );
+    if (insertError || !submission) {
+      console.error("Failed to save contact submission:", insertError);
+      return new Response(
+        JSON.stringify({ error: "Unable to save your inquiry" }),
+        { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+      );
+    }
+
+    try {
+      await sendEmail({ name, email, phone: phone || undefined, services: service || undefined, subject, message }, gmailUser, gmailPassword);
+      const { error: updateError } = await supabase
+        .from("contact_submissions")
+        .update({ email_status: "sent", email_sent_at: new Date().toISOString(), email_error: null })
+        .eq("id", submission.id);
+
+      if (updateError) console.error("Failed to mark contact email as sent:", updateError);
+
+      return new Response(
+        JSON.stringify({ success: true, emailSent: true }),
+        { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+      );
+    } catch (emailError) {
+      console.error("Failed to send contact notification:", emailError);
+      const { error: updateError } = await supabase
+        .from("contact_submissions")
+        .update({ email_status: "failed", email_error: "Notification delivery failed" })
+        .eq("id", submission.id);
+
+      if (updateError) console.error("Failed to record email failure:", updateError);
+
+      return new Response(
+        JSON.stringify({ success: true, emailSent: false, message: "Your inquiry was saved, but the email notification is temporarily delayed." }),
+        { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+      );
+    }
   } catch (error) {
     console.error("Error sending contact email:", error);
     return new Response(
