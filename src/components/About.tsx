@@ -12,7 +12,7 @@ export default function About() {
   const { ref, visible } = useScrollReveal();
 
   return (
-    <section id="about" className="relative bg-[#fefaf2] py-20 lg:py-28">
+    <section id="about" className="relative bg-[#fcf9f1] py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left: Image */}

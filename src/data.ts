@@ -1,58 +1,223 @@
+import {
+  ArrowLeftRight,
+  Code,
+  Code2,
+  Monitor,
+  MousePointerClick,
+  Package,
+  PanelsTopLeft,
+  RefreshCw,
+  Search,
+  ShoppingBag,
+  Store,
+  Wrench,
+} from 'lucide-react';
+
 export const services = [
   {
-    id: 1,
-    icon: 'Palette',
-    title: 'WordPress Development',
-    description: 'Professional WordPress websites for businesses, corporate companies and personal brands, built with responsive layouts, clear structure and easy content management.',
-    features: ['Business & Corporate Websites', 'Responsive WordPress Design', 'Elementor, Divi & Avada', 'SEO & Performance Optimization'],
-    price: 'Starting at custom quote',
-    image: '/wordpress.jpg',
+    title: "Web Development",
+    slug: "web-development",
+    icon: Code2,
+    image: "/web-development.jpg",
+    description:
+      "Professional web development services to build modern, responsive, and user-friendly websites for businesses, professionals, and online brands. I develop websites with clean layouts, reliable functionality, mobile-friendly designs, and SEO-friendly structure to help you establish a strong online presence.",
+    features: [
+      "Responsive Website Development",
+      "Business Website Development",
+      "Custom Website Functionality",
+      "Mobile-Friendly Layouts",
+      "SEO-Friendly Structure",
+      "Website Performance Optimization"
+    ],
+    price: "Starting at custom quote"
   },
   {
-    id: 2,
-    icon: 'Monitor',
-    title: 'Shopify Development',
-    description: 'Professional Shopify stores with responsive storefronts, organized product layouts and a smooth shopping experience for growing online businesses.',
-    features: ['Shopify Store Setup', 'Product & Collection Structure', 'Theme Customization', 'Responsive Storefront'],
-    price: 'Starting at custom quote',
-    image: '/shopify.jpg',
+    title: "WordPress Development",
+    slug: "wordpress-development",
+    icon: PanelsTopLeft,
+    image: "/wordpress.jpg",
+    description:
+      "Get a professional WordPress website tailored to your business goals. I provide WordPress development using Elementor, popular themes, and suitable plugins to create responsive business websites, blogs, portfolios, and online stores that are easy to manage and optimized for search engines.",
+    features: [
+      "WordPress Website Development",
+      "Elementor Website Design",
+      "Theme Setup and Customization",
+      "WooCommerce Integration",
+      "Responsive WordPress Layouts",
+      "WordPress Bug Fixes and Optimization"
+    ],
+    price: "Starting at custom quote"
   },
   {
-    id: 3,
-    icon: 'Smartphone',
-    title: 'eCommerce Development',
-    description: 'Scalable online stores built with WooCommerce or Shopify, designed around product discovery, easy navigation and a smooth shopping experience.',
-    features: ['WooCommerce Development', 'Product & Category Setup', 'Cart & Checkout', 'Responsive Store Design'],
-    price: 'Starting at custom quote',
-    image: '/eCommerce%20Development.jpg',
+    title: "Website Redesign",
+    slug: "website-redesign",
+    icon: RefreshCw,
+    image: "/redesign.jpg",
+    description:
+      "Transform an outdated website into a modern, professional, and responsive online experience. My website redesign services improve visual consistency, content structure, navigation, mobile usability, and performance while helping your business present a stronger and more credible brand online.",
+    features: [
+      "Website Redesign and Revamp",
+      "Modern Layout and Styling",
+      "Mobile Responsiveness Improvements",
+      "Navigation and Content Structure",
+      "Elementor Website Customization",
+      "Performance and SEO Improvements"
+    ],
+    price: "Starting at custom quote"
   },
   {
-    id: 4,
-    icon: 'ShoppingBag',
-    title: 'Website Redesign',
-    description: 'Modernize an outdated website with cleaner layouts, better responsiveness, improved usability and a structure built around your current business goals.',
-    features: ['Website Redesign', 'Responsive Improvements', 'Content Restructuring', 'SEO-Friendly Structure'],
-    price: 'Starting at custom quote',
-    image: '/redesign.jpg',
+    title: "Shopify Development",
+    slug: "shopify-development",
+    icon: ShoppingBag,
+    image: "/shopify.jpg",
+    description:
+      "Launch or improve your online store with Shopify development tailored to your products and business needs. I help set up and customize Shopify stores with professional themes, organized product pages, responsive layouts, and essential eCommerce features to create a smooth shopping experience.",
+    features: [
+      "Shopify Store Setup",
+      "Shopify Theme Customization",
+      "Product and Collection Setup",
+      "Responsive Store Design",
+      "Navigation and Store Organization",
+      "Essential eCommerce Functionality"
+    ],
+    price: "Starting at custom quote"
   },
   {
-    id: 5,
-    icon: 'Sparkles',
-    title: 'Landing Page Development',
-    description: 'Focused landing pages for services, campaigns and lead generation with clear messaging, responsive layouts and strong calls to action.',
-    features: ['Business Landing Pages', 'Lead Generation', 'Conversion-Focused Layout', 'Mobile Responsive Design'],
-    price: 'Starting at custom quote',
-    image: '/landing.jpg',
+    title: "eCommerce Development",
+    slug: "ecommerce-development",
+    icon: Store,
+    image: "/eCommerce%20Development.jpg",
+    description:
+      "Build a functional online store that makes it easier for customers to browse products and complete purchases. My eCommerce development services include store setup, product organization, shopping cart configuration, payment integration support, and responsive layouts using suitable platforms such as WooCommerce and Shopify.",
+    features: [
+      "Online Store Development",
+      "WooCommerce Store Setup",
+      "Shopify eCommerce Setup",
+      "Product and Category Organization",
+      "Shopping Cart and Checkout Setup",
+      "Payment Gateway Integration Support"
+    ],
+    price: "Starting at custom quote"
   },
   {
-    id: 6,
-    icon: 'Search',
-    title: 'Website SEO & Optimization',
-    description: 'Improve your website’s technical and on-page foundations with better structure, metadata, image optimization, internal linking and performance improvements.',
-    features: ['On-Page SEO', 'Technical SEO Foundations', 'Image Optimization', 'Website Performance'],
-    price: 'Starting at custom quote',
-    image: '/seo.jpg',
+    title: "Wix Website Development",
+    slug: "wix-website-development",
+    icon: Monitor,
+    image: "/wix.jpg",
+    description:
+      "Create a polished and easy-to-manage website with Wix. I build and customize Wix websites for small businesses, service providers, personal brands, and portfolios, with responsive layouts, clear navigation, engaging content sections, and SEO-friendly page structure to support your online visibility.",
+    features: [
+      "Wix Website Setup",
+      "Wix Template Customization",
+      "Business and Portfolio Websites",
+      "Mobile-Friendly Design",
+      "Contact Forms and Essential Integrations",
+      "Basic On-Page SEO Setup"
+    ],
+    price: "Starting at custom quote"
   },
+  {
+    title: "Landing Page Development",
+    slug: "landing-page-development",
+    icon: MousePointerClick,
+    image: "/landing.jpg",
+    description:
+      "Get a focused, conversion-oriented landing page designed around your campaign or business goal. I create responsive landing pages with compelling headlines, clear calls to action, structured content, and lead capture forms to support marketing campaigns, service inquiries, product launches, and lead generation.",
+    features: [
+      "Single-Page Landing Page Development",
+      "Lead Generation Form Setup",
+      "Call-to-Action Optimization",
+      "Mobile-Responsive Sections",
+      "Product and Service Landing Pages",
+      "Basic On-Page SEO"
+    ],
+    price: "Starting at custom quote"
+  },
+  {
+    title: "Custom Website Development",
+    slug: "custom-website-development",
+    icon: Code,
+    image: "/custom-website.jpg",
+    description:
+      "Get a website tailored to your specific requirements instead of relying on a generic layout. I customize website sections, page structures, styling, and functionality to match your goals, brand identity, and content needs, while focusing on responsive design, maintainable implementation, and a consistent user experience.",
+    features: [
+      "Custom Website Layouts",
+      "Tailored Page Sections",
+      "Website Feature Customization",
+      "Responsive Design Implementation",
+      "Third-Party Plugin Integration",
+      "Cross-Device Compatibility"
+    ],
+    price: "Starting at custom quote"
+  },
+  {
+    title: "Website SEO & Optimization",
+    slug: "website-seo-optimization",
+    icon: Search,
+    image: "/seo.jpg",
+    description:
+      "Improve your website's technical foundation and on-page SEO with practical optimization services. I help organize page titles, meta descriptions, headings, image alt text, internal links, and content structure while addressing relevant performance issues. These improvements can help search engines understand your pages and support a better user experience.",
+    features: [
+      "On-Page SEO Setup",
+      "SEO Titles and Meta Descriptions",
+      "Heading Structure Optimization",
+      "Image Alt Text Optimization",
+      "Internal Linking Improvements",
+      "Website Speed and Performance Checks"
+    ],
+    price: "Starting at custom quote"
+  },
+  {
+    title: "Website Maintenance & Bug Fixes",
+    slug: "website-maintenance-bug-fixes",
+    icon: Wrench,
+    image: "/maintenance.jpg",
+    description:
+      "Keep your website updated, functional, and reliable with website maintenance and troubleshooting services. I help resolve common WordPress and Elementor issues, fix layout problems, check plugin compatibility, and perform routine maintenance to reduce avoidable disruptions and keep your website running smoothly.",
+    features: [
+      "WordPress Website Maintenance",
+      "WordPress and Plugin Updates",
+      "Elementor Layout Bug Fixes",
+      "Common Website Error Troubleshooting",
+      "Backup Setup Assistance",
+      "Plugin Conflict Investigation"
+    ],
+    price: "Starting at custom quote"
+  },
+  {
+    title: "Website Migration",
+    slug: "website-migration",
+    icon: ArrowLeftRight,
+    image: "/migration.jpg",
+    description:
+      "Move your website to a new hosting provider, domain, or supported platform with careful planning and setup. My website migration services focus on transferring website files and databases where applicable, preserving important content, checking essential links, and testing key pages after migration to help minimize downtime and disruption.",
+    features: [
+      "WordPress Website Migration",
+      "Hosting-to-Hosting Transfers",
+      "Domain Migration Assistance",
+      "Website File and Database Transfer",
+      "Post-Migration Functionality Checks",
+      "Redirect and Link Checks Where Applicable"
+    ],
+    price: "Starting at custom quote"
+  },
+  {
+    title: "Digital Products",
+    slug: "digital-products",
+    icon: Package,
+    image: "/digital-products.jpg",
+    description:
+      "Present and sell digital products through a professional, easy-to-navigate online store. I can help set up digital product pages and suitable eCommerce functionality for items such as downloadable guides, eBooks, templates, digital planners, and other downloadable resources, depending on your chosen platform and required features.",
+    features: [
+      "Digital Product Store Setup",
+      "eBook and Downloadable Product Pages",
+      "Digital Template Listings",
+      "WooCommerce Digital Product Configuration",
+      "Product Categories and Organization",
+      "Checkout Setup for Digital Purchases"
+    ],
+    price: "Starting at custom quote"
+  }
 ];
 
 export const projects = [

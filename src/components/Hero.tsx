@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ArrowRight, ArrowUpRight, ChartNoAxesColumnIncreasing, Monitor, ShoppingCart, Smartphone } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Monitor, SearchCheck, ShoppingCart, Smartphone } from 'lucide-react';
 
 const roles = ['WordPress Developer', 'Shopify Developer', 'Freelance Web Developer', 'eCommerce Website Developer'];
 
@@ -13,7 +13,7 @@ const highlights = [
   {
     title: 'SEO-Friendly',
     description: 'Speed Optimization',
-    Icon: ChartNoAxesColumnIncreasing,
+    Icon: SearchCheck,
     iconStyle: 'bg-emerald-100 text-emerald-600',
   },
   {

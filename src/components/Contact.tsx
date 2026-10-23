@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, MapPin, Phone, Send, CheckCircle2, Loader2, AlertCircle, ChevronDown } from 'lucide-react';
+import { Mail, MapPin, Phone, Clock, Send, CheckCircle2, Loader2, AlertCircle, ChevronDown } from 'lucide-react';
 import SectionHeading from './SectionHeading';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { services } from '@/data';
@@ -7,6 +7,7 @@ import { services } from '@/data';
 const contactInfo = [
   { icon: Mail, label: 'Email', value: 'fizawebstudio@gmail.com', href: 'mailto:fizawebstudio@gmail.com' },
   { icon: Phone, label: 'Phone', value: '+92 312 7195206', href: 'tel:+923127195206' },
+  { icon: Clock, label: 'Availability', value: 'Available anytime — replies within a few hours' },
   { icon: MapPin, label: 'Location', value: 'Pakistan, Lahore - Remote', href: '#' },
 ];
 
@@ -68,21 +69,30 @@ Whether you need a new WordPress website, Shopify store, landing page or improve
             </div>
 
             <div className="space-y-2.5">
-              {contactInfo.map((info, i) => (
-                <a
-                  key={i}
-                  href={info.href}
-                  className="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-ink-100 hover:border-accent-500/30 transition-colors duration-300 group"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-accent-500/10 group-hover:bg-accent-500 flex items-center justify-center transition-colors">
-                    <info.icon size={18} className="text-accent-500 group-hover:text-white transition-colors" />
+              {contactInfo.map((info, i) => {
+                const card = (
+                  <>
+                    <div className="w-10 h-10 rounded-xl bg-accent-500/10 group-hover:bg-accent-500 flex items-center justify-center transition-colors">
+                      <info.icon size={18} className="text-accent-500 group-hover:text-white transition-colors" />
+                    </div>
+                    <div>
+                      <div className="text-[10px] text-ink-400 font-medium uppercase tracking-wide">{info.label}</div>
+                      <div className="text-sm font-semibold text-ink-900">{info.value}</div>
+                    </div>
+                  </>
+                );
+                const className = "flex items-center gap-3 p-3.5 rounded-xl bg-white border border-ink-100 hover:border-accent-500/30 transition-colors duration-300 group";
+
+                return info.href ? (
+                  <a key={i} href={info.href} className={className}>
+                    {card}
+                  </a>
+                ) : (
+                  <div key={i} className={className}>
+                    {card}
                   </div>
-                  <div>
-                    <div className="text-[10px] text-ink-400 font-medium uppercase tracking-wide">{info.label}</div>
-                    <div className="text-sm font-semibold text-ink-900">{info.value}</div>
-                  </div>
-                </a>
-              ))}
+                );
+              })}
             </div>
           </div>
 
