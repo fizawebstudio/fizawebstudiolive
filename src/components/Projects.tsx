@@ -3,11 +3,13 @@ import { ArrowUpRight, Calendar } from 'lucide-react';
 import { projects } from '@/data';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
-const categories = ['All', 'Web Design', 'E-Commerce', 'Mobile Design', 'Brand Identity'];
+const categories = ['All', 'Web Design', 'E-Commerce', 'Shopify', 'Landing Page'];
 
 export default function Projects() {
   const [filter, setFilter] = useState('All');
-  const filtered = filter === 'All' ? projects : projects.filter((p) => p.category === filter);
+  const filtered = filter === 'All'
+    ? projects
+    : projects.filter((project) => project.category === filter || project.tags.includes(filter));
 
   return (
     <section id="work" className="relative py-20 lg:py-28 bg-ink-50">
@@ -19,14 +21,14 @@ export default function Projects() {
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent-500/10 border border-accent-500/20 mb-4">
                 <span className="w-1.5 h-1.5 rounded-full bg-accent-500" />
                 <span className="text-xs font-semibold tracking-[0.15em] uppercase text-accent-500">
-                  Portfolio
+                  Featured Projects
                 </span>
               </div>
               <h2 className="font-display font-bold text-2xl sm:text-3xl lg:text-4xl tracking-tight text-ink-900 leading-[1.2] mb-4">
-                Explore my latest <span className="text-accent-500">projects</span>
+                Explore my <span className="text-accent-500">latest projects</span>
               </h2>
               <p className="text-base text-ink-500 leading-relaxed mb-6">
-                A curated selection of projects spanning web design, branding, and digital products.
+                Explore a collection of websites I’ve designed and developed, built with a focus on modern design, smooth functionality, and a seamless user experience.  
               </p>
 
               {/* Filter tabs */}
@@ -116,7 +118,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             }}
             className="inline-flex items-center gap-1 text-sm font-semibold text-accent-500 hover:gap-2 transition-all"
           >
-            View Details <ArrowUpRight size={14} />
+            View Project <ArrowUpRight size={14} />
           </a>
         </div>
       </div>

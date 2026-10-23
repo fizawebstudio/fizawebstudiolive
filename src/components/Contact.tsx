@@ -6,8 +6,8 @@ import { services } from '@/data';
 
 const contactInfo = [
   { icon: Mail, label: 'Email', value: 'fizawebstudio@gmail.com', href: 'mailto:fizawebstudio@gmail.com' },
-  { icon: Phone, label: 'Phone', value: '+1 (415) 555-0142', href: 'tel:+14155550142' },
-  { icon: MapPin, label: 'Location', value: 'San Francisco, CA', href: '#' },
+  { icon: Phone, label: 'Phone', value: '+92 312 7195206', href: 'tel:+923127195206' },
+  { icon: MapPin, label: 'Location', value: 'Pakistan, Lahore - Remote', href: '#' },
 ];
 
 export default function Contact() {
@@ -51,7 +51,7 @@ export default function Contact() {
         <SectionHeading
           eyebrow="Contact"
           title={<>Let's build something <span className="text-accent-500">great together</span></>}
-          description="Have a project in mind? Fill out the form below and I'll get back to you within 24 hours."
+          description="Have a project in mind? Fill out the form below and I'll get back to you within 24 hours. Tell me about your business, website or project. Share what you need, what you want to improve and what you want your website to achieve."
         />
 
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 mt-14">
@@ -62,7 +62,8 @@ export default function Contact() {
                 Get in touch
               </h3>
               <p className="text-ink-500 leading-relaxed text-sm">
-                Whether you have a fully-fledged brief or just a spark of an idea, I'm here to help you bring it to life.
+Whether you need a new WordPress website, Shopify store, landing page or improvements to an existing website, I can help you plan the right solution.
+
               </p>
             </div>
 

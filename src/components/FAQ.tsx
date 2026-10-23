@@ -13,7 +13,7 @@ export default function FAQ() {
         <SectionHeading
           eyebrow="FAQ"
           title={<>Questions? <span className="text-accent-500">I've got answers</span></>}
-          description="Everything you need to know about working with me. Can't find what you're looking for? Reach out directly."
+          description="A few common questions about website development, redesigns, eCommerce and ongoing website support."
         />
 
         <div className="mt-12 space-y-3">
@@ -33,10 +33,10 @@ export default function FAQ() {
           <div className="absolute inset-0 bg-gradient-to-br from-accent-500/10 to-transparent" />
           <div className="relative">
             <h4 className="font-display font-bold text-xl lg:text-2xl text-white mb-2">
-              Still have questions?
+              Still Have a Question?
             </h4>
-            <p className="text-sm text-ink-300 mb-5 max-w-md mx-auto">
-              I'm happy to chat through any details before we start working together.
+            <p className="text-sm text-ink-300 mb-5 max-w-xl mx-auto">
+              Have a project in mind or need help choosing the right website solution? Send me the details and I’ll help you figure out the next step.
             </p>
             <a
               href="#contact"
@@ -46,7 +46,7 @@ export default function FAQ() {
               }}
               className="inline-flex items-center gap-1.5 px-6 py-3 rounded-xl bg-accent-500 text-white text-sm font-semibold hover:bg-accent-600 transition-colors"
             >
-              Ask Me Anything
+              Start a Project
               <ArrowUpRight size={16} />
             </a>
           </div>

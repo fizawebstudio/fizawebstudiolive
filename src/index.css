@@ -18,8 +18,8 @@
   body {
     font-family: 'Inter', system-ui, sans-serif;
     overflow-x: hidden;
-    background: #fffaf5;
-    color: #171311;
+    background: #ffffff;
+    color: #0a0c14;
   }
 
   ::selection {
@@ -34,7 +34,7 @@
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, #f97316 0%, #fb923c 50%, #fdba74 100%);
+    background: linear-gradient(135deg, #f97316 0%, #fb923c 50%, #fbbf24 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

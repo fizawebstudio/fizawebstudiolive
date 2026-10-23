@@ -20,8 +20,8 @@ export default function Footer() {
             <h3 className="font-display font-bold text-2xl lg:text-4xl text-white mb-3 leading-tight">
               Ready to start your <span className="text-accent-500">next web project?</span>
             </h3>
-            <p className="text-ink-300 max-w-xl mx-auto mb-6 text-sm">
-              Let's collaborate and create something that sets your brand apart. Your vision, my craft.
+            <p className="text-ink-300 max-w-2xl mx-auto mb-6 text-sm">
+              Whether you need a new WordPress website, Shopify store, landing page or improvements to an existing website, let’s discuss what you need and find the right approach.
             </p>
             <a
               href="#contact"
@@ -31,7 +31,7 @@ export default function Footer() {
               }}
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-accent-500 text-white font-semibold text-sm hover:bg-accent-600 transition-colors duration-300"
             >
-              Let's Work Together
+              Start a Project
             </a>
           </div>
         </div>
@@ -48,7 +48,7 @@ export default function Footer() {
               />
             </a>
             <p className="text-sm text-ink-500 leading-relaxed max-w-sm">
-              A creative design studio crafting beautiful, functional digital experiences for brands that dare to stand out.
+Freelance web development for businesses and online brands, specializing in WordPress, Shopify, eCommerce websites, redesigns and website optimization.
             </p>
             <div className="flex gap-2">
               {socials.map((s, i) => (
@@ -67,7 +67,7 @@ export default function Footer() {
           {/* Links */}
           <div className="md:col-span-3">
             <h4 className="font-display font-semibold text-sm text-ink-900 mb-3 uppercase tracking-wide">
-              Navigation
+              Explore
             </h4>
             <ul className="space-y-2">
               {navLinks.map((link) => (
@@ -94,8 +94,8 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-sm text-ink-500">
               <li>fizawebstudio@gmail.com</li>
-              <li>+1 (415) 555-0142</li>
-              <li>San Francisco, CA</li>
+              <li>+92 312 7195206</li>
+              <li>Pakistan, Lahore - Remote</li>
               <li className="pt-2">
                 <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 text-green-600 text-xs font-medium">
                   <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
@@ -112,9 +112,7 @@ export default function Footer() {
             © 2026 Fiza Web Studio. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
-            <a href="#" className="text-xs text-ink-400 hover:text-accent-500 transition-colors">Privacy Policy</a>
-            <a href="#" className="text-xs text-ink-400 hover:text-accent-500 transition-colors">Terms of Service</a>
-            <button
+             <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="w-9 h-9 rounded-lg border border-ink-100 flex items-center justify-center text-ink-500 hover:text-accent-500 hover:border-accent-400 transition-colors"
               aria-label="Back to top"

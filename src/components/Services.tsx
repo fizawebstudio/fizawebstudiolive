@@ -15,9 +15,9 @@ export default function Services() {
     <section id="services" className="relative py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <SectionHeading
-          eyebrow="What I Do"
+          eyebrow="Services"
           title={<>Web development services built around <span className="text-accent-500">your goals</span></>}
-          description="From brand identity to web design, I offer a full spectrum of creative services to help your business stand out and grow."
+          description="Modern, responsive and SEO-friendly websites for businesses, founders and online brands that need a clear digital presence."
         />
 
         {/* Service cards */}
@@ -28,23 +28,28 @@ export default function Services() {
           })}
         </div>
 
-        {/* Process section */}
-        <div className="mt-20 lg:mt-24">
-          <SectionHeading
-            eyebrow="How It Works"
-            title={<>A simple <span className="text-accent-500">4-step process</span></>}
-            description="Every project follows a structured approach ensuring clarity, quality, and results you can measure."
-          />
+      </div>
+    </section>
+  );
+}
 
-          <div className="relative mt-14">
-            {/* Connecting line */}
-            <div className="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-accent-500/10 via-accent-500/30 to-accent-500/10" />
+export function Process() {
+  return (
+    <section id="process" className="relative py-20 lg:py-28">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        <SectionHeading
+          eyebrow="Process"
+          title={<>A simple <span className="text-accent-500">4-step process</span></>}
+          description="From the first conversation to launch, every step is planned around your goals, functionality and website needs."
+        />
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {processSteps.map((step, i) => (
-                <ProcessCard key={step.number} step={step} index={i} />
-              ))}
-            </div>
+        <div className="relative mt-14">
+          <div className="hidden lg:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-gradient-to-r from-accent-500/10 via-accent-500/30 to-accent-500/10" />
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {processSteps.map((step, i) => (
+              <ProcessCard key={step.number} step={step} index={i} />
+            ))}
           </div>
         </div>
       </div>
@@ -81,7 +86,7 @@ function ServiceCard({
         <div className="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-transparent" />
 
         {/* Icon badge */}
-        <div className="absolute bottom-3 left-4 w-12 h-12 rounded-xl bg-white shadow-md border border-ink-100 flex items-center justify-center group-hover:bg-accent-500 transition-colors duration-300">
+        <div className="absolute bottom-3 left-4 w-12 h-12 rounded-xl bg-white shadow-md border-ink-100 flex items-center justify-center group-hover:bg-accent-500 transition-colors duration-300">
           <Icon size={22} className="text-accent-500 group-hover:text-white transition-colors" />
         </div>
       </div>

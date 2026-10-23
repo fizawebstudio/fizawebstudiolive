@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Marquee from '@/components/Marquee';
-import Services from '@/components/Services';
+import Services, { Process } from '@/components/Services';
 import Projects from '@/components/Projects';
 import About from '@/components/About';
 import Testimonials from '@/components/Testimonials';
@@ -42,8 +42,9 @@ export default function App() {
         <Hero />
         <Marquee />
         <Services />
-        <Projects />
         <About />
+        <Projects />
+        <Process />
         <Testimonials />
         <FAQ />
         <Contact />
