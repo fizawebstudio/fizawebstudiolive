@@ -1,5 +1,7 @@
 import {
-  Palette, Monitor, Smartphone, ShoppingBag, Sparkles, Search,
+  Code2, PanelsTopLeft, Paintbrush, LayoutTemplate, ShoppingBag, Store,
+  Monitor, FileCode, Wrench, Search, ArrowRightLeft, BookOpen, PencilLine,
+  FileDown, Sparkles , RefreshCw,
   ArrowUpRight, Check, type LucideIcon,
 } from 'lucide-react';
 import { services, processSteps } from '@/data';
@@ -7,7 +9,9 @@ import SectionHeading from './SectionHeading';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const iconMap: Record<string, LucideIcon> = {
-  Palette, Monitor, Smartphone, ShoppingBag, Sparkles, Search,
+  Code2, PanelsTopLeft, Paintbrush, LayoutTemplate, ShoppingBag, Store,
+  Monitor, FileCode, Wrench, Search, ArrowRightLeft, BookOpen, PencilLine,
+  FileDown, Sparkles, RefreshCw,
 };
 
 export default function Services() {
@@ -16,7 +20,7 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <SectionHeading
           eyebrow="Services"
-          title={<>Web development services built around <span className="text-accent-500">your goals</span></>}
+          title={<>Web Solutions to Grow Your <span className="text-accent-500">Online Presence</span></>}
           description="Modern, responsive and SEO-friendly websites for businesses, founders and online brands that need a clear digital presence."
         />
 
@@ -35,7 +39,7 @@ export default function Services() {
 
 export function Process() {
   return (
-    <section id="process" className="relative py-20 lg:py-28">
+    <section id="process" className="relative pb-20 pt-10 lg:pb-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <SectionHeading
           eyebrow="Process"

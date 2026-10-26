@@ -1,279 +1,189 @@
-import {
-  ArrowLeftRight,
-  Code,
-  Code2,
-  Monitor,
-  MousePointerClick,
-  Package,
-  PanelsTopLeft,
-  RefreshCw,
-  Search,
-  ShoppingBag,
-  Store,
-  Wrench,
-} from 'lucide-react';
-
 export const services = [
   {
-    title: "Web Development",
-    slug: "web-development",
-    icon: Code2,
-    image: "/web-development.jpg",
-    description:
-      "Professional web development services to build modern, responsive, and user-friendly websites for businesses, professionals, and online brands. I develop websites with clean layouts, reliable functionality, mobile-friendly designs, and SEO-friendly structure to help you establish a strong online presence.",
-    features: [
-      "Responsive Website Development",
-      "Business Website Development",
-      "Custom Website Functionality",
-      "Mobile-Friendly Layouts",
-      "SEO-Friendly Structure",
-      "Website Performance Optimization"
-    ],
-    price: "Starting at custom quote"
-  },
-  {
-    title: "WordPress Development",
-    slug: "wordpress-development",
-    icon: PanelsTopLeft,
-    image: "/wordpress.jpg",
-    description:
-      "Get a professional WordPress website tailored to your business goals. I provide WordPress development using Elementor, popular themes, and suitable plugins to create responsive business websites, blogs, portfolios, and online stores that are easy to manage and optimized for search engines.",
-    features: [
-      "WordPress Website Development",
-      "Elementor Website Design",
-      "Theme Setup and Customization",
-      "WooCommerce Integration",
-      "Responsive WordPress Layouts",
-      "WordPress Bug Fixes and Optimization"
-    ],
-    price: "Starting at custom quote"
-  },
-  {
-    title: "Website Redesign",
-    slug: "website-redesign",
-    icon: RefreshCw,
-    image: "/redesign.jpg",
-    description:
-      "Transform an outdated website into a modern, professional, and responsive online experience. My website redesign services improve visual consistency, content structure, navigation, mobile usability, and performance while helping your business present a stronger and more credible brand online.",
-    features: [
-      "Website Redesign and Revamp",
-      "Modern Layout and Styling",
-      "Mobile Responsiveness Improvements",
-      "Navigation and Content Structure",
-      "Elementor Website Customization",
-      "Performance and SEO Improvements"
-    ],
-    price: "Starting at custom quote"
-  },
-  {
-    title: "Shopify Development",
-    slug: "shopify-development",
-    icon: ShoppingBag,
-    image: "/shopify.jpg",
-    description:
-      "Launch or improve your online store with Shopify development tailored to your products and business needs. I help set up and customize Shopify stores with professional themes, organized product pages, responsive layouts, and essential eCommerce features to create a smooth shopping experience.",
-    features: [
-      "Shopify Store Setup",
-      "Shopify Theme Customization",
-      "Product and Collection Setup",
-      "Responsive Store Design",
-      "Navigation and Store Organization",
-      "Essential eCommerce Functionality"
-    ],
-    price: "Starting at custom quote"
-  },
-  {
-    title: "eCommerce Development",
-    slug: "ecommerce-development",
-    icon: Store,
-    image: "/eCommerce%20Development.jpg",
-    description:
-      "Build a functional online store that makes it easier for customers to browse products and complete purchases. My eCommerce development services include store setup, product organization, shopping cart configuration, payment integration support, and responsive layouts using suitable platforms such as WooCommerce and Shopify.",
-    features: [
-      "Online Store Development",
-      "WooCommerce Store Setup",
-      "Shopify eCommerce Setup",
-      "Product and Category Organization",
-      "Shopping Cart and Checkout Setup",
-      "Payment Gateway Integration Support"
-    ],
-    price: "Starting at custom quote"
-  },
-  {
-    title: "Wix Website Development",
-    slug: "wix-website-development",
-    icon: Monitor,
-    image: "/wix.jpg",
-    description:
-      "Create a polished and easy-to-manage website with Wix. I build and customize Wix websites for small businesses, service providers, personal brands, and portfolios, with responsive layouts, clear navigation, engaging content sections, and SEO-friendly page structure to support your online visibility.",
-    features: [
-      "Wix Website Setup",
-      "Wix Template Customization",
-      "Business and Portfolio Websites",
-      "Mobile-Friendly Design",
-      "Contact Forms and Essential Integrations",
-      "Basic On-Page SEO Setup"
-    ],
-    price: "Starting at custom quote"
-  },
-  {
-    title: "Landing Page Development",
-    slug: "landing-page-development",
-    icon: MousePointerClick,
-    image: "/landing.jpg",
-    description:
-      "Get a focused, conversion-oriented landing page designed around your campaign or business goal. I create responsive landing pages with compelling headlines, clear calls to action, structured content, and lead capture forms to support marketing campaigns, service inquiries, product launches, and lead generation.",
-    features: [
-      "Single-Page Landing Page Development",
-      "Lead Generation Form Setup",
-      "Call-to-Action Optimization",
-      "Mobile-Responsive Sections",
-      "Product and Service Landing Pages",
-      "Basic On-Page SEO"
-    ],
-    price: "Starting at custom quote"
-  },
-  {
-    title: "Custom Website Development",
-    slug: "custom-website-development",
-    icon: Code,
-    image: "/custom-website.jpg",
-    description:
-      "Get a website tailored to your specific requirements instead of relying on a generic layout. I customize website sections, page structures, styling, and functionality to match your goals, brand identity, and content needs, while focusing on responsive design, maintainable implementation, and a consistent user experience.",
-    features: [
-      "Custom Website Layouts",
-      "Tailored Page Sections",
-      "Website Feature Customization",
-      "Responsive Design Implementation",
-      "Third-Party Plugin Integration",
-      "Cross-Device Compatibility"
-    ],
-    price: "Starting at custom quote"
-  },
-  {
-    title: "Website SEO & Optimization",
-    slug: "website-seo-optimization",
-    icon: Search,
-    image: "/seo.jpg",
-    description:
-      "Improve your website's technical foundation and on-page SEO with practical optimization services. I help organize page titles, meta descriptions, headings, image alt text, internal links, and content structure while addressing relevant performance issues. These improvements can help search engines understand your pages and support a better user experience.",
-    features: [
-      "On-Page SEO Setup",
-      "SEO Titles and Meta Descriptions",
-      "Heading Structure Optimization",
-      "Image Alt Text Optimization",
-      "Internal Linking Improvements",
-      "Website Speed and Performance Checks"
-    ],
-    price: "Starting at custom quote"
-  },
-  {
-    title: "Website Maintenance & Bug Fixes",
-    slug: "website-maintenance-bug-fixes",
-    icon: Wrench,
-    image: "/maintenance.jpg",
-    description:
-      "Keep your website updated, functional, and reliable with website maintenance and troubleshooting services. I help resolve common WordPress and Elementor issues, fix layout problems, check plugin compatibility, and perform routine maintenance to reduce avoidable disruptions and keep your website running smoothly.",
-    features: [
-      "WordPress Website Maintenance",
-      "WordPress and Plugin Updates",
-      "Elementor Layout Bug Fixes",
-      "Common Website Error Troubleshooting",
-      "Backup Setup Assistance",
-      "Plugin Conflict Investigation"
-    ],
-    price: "Starting at custom quote"
-  },
-  {
-    title: "Website Migration",
-    slug: "website-migration",
-    icon: ArrowLeftRight,
-    image: "/migration.jpg",
-    description:
-      "Move your website to a new hosting provider, domain, or supported platform with careful planning and setup. My website migration services focus on transferring website files and databases where applicable, preserving important content, checking essential links, and testing key pages after migration to help minimize downtime and disruption.",
-    features: [
-      "WordPress Website Migration",
-      "Hosting-to-Hosting Transfers",
-      "Domain Migration Assistance",
-      "Website File and Database Transfer",
-      "Post-Migration Functionality Checks",
-      "Redirect and Link Checks Where Applicable"
-    ],
-    price: "Starting at custom quote"
-  },
-  {
-    title: "Digital Products",
-    slug: "digital-products",
-    icon: Package,
-    image: "/digital-products.jpg",
-    description:
-      "Present and sell digital products through a professional, easy-to-navigate online store. I can help set up digital product pages and suitable eCommerce functionality for items such as downloadable guides, eBooks, templates, digital planners, and other downloadable resources, depending on your chosen platform and required features.",
-    features: [
-      "Digital Product Store Setup",
-      "eBook and Downloadable Product Pages",
-      "Digital Template Listings",
-      "WooCommerce Digital Product Configuration",
-      "Product Categories and Organization",
-      "Checkout Setup for Digital Purchases"
-    ],
-    price: "Starting at custom quote"
-  }
-];
-
-export const projects = [
-  {
     id: 1,
-    title: 'Fydexa Digital',
-    category: 'Web Design',
-    image: 'https://images.pexels.com/photos/251225/pexels-photo-251225.jpeg?auto=compress&cs=tinysrgb&h=600&w=800',
-    description: 'A modern business website concept designed for a digital marketing brand, with clear service sections, strong calls to action and a professional responsive layout.',
-    tags: ['WordPress', 'Business Website', 'Digital Marketing'],
-    year: '2025',
+    icon: 'Code2',
+    title: 'Web Development',
+    description: 'Build modern, responsive websites for businesses and professionals with clean layouts, user-friendly navigation and reliable functionality tailored to your specific goals.',
+    features: ['Custom Website Development','User-Friendly Navigation', 'Responsive Improvements', 'Content Restructuring', 'Modern Web Technologies'],
+    price: 'Starting at custom quote',
+    image: 'services/Web-Development.webp',
   },
   {
     id: 2,
-    title: 'Urban Wear Store',
-    category: 'E-Commerce',
-    image: 'https://images.pexels.com/photos/8534457/pexels-photo-8534457.jpeg?auto=compress&cs=tinysrgb&h=600&w=800',
-    description: 'A fashion eCommerce concept built around product discovery, category navigation and a responsive shopping experience.',
-    tags: ['WordPress', 'WooCommerce', 'eCommerce'],
-    year: '2025',
+    icon: 'PanelsTopLeft',
+    title: 'WordPress Development',
+    description: 'Professional WordPress websites for businesses, corporate companies and personal brands, built with responsive layouts, clear structure and easy content management.',
+    features: ['Business & Corporate Websites','Blog Setup', 'Responsive WordPress Design', 'Elementor, Divi & Avada', 'SEO & Performance Optimization'],
+    price: 'Starting at custom quote',
+    image: 'services/wordpress.jpg',
   },
   {
     id: 3,
-    title: 'Glow Beauty Shop',
-    category: 'E-Commerce',
-    image: 'https://images.pexels.com/photos/38639/mockup-psd-ipad-iphone-38639.jpeg?auto=compress&cs=tinysrgb&h=600&w=800',
-    description: 'A beauty-focused online store concept with product presentation, category organization and a clean responsive storefront.',
-    tags: ['WooCommerce', 'eCommerce', 'Beauty'],
-    year: '2024',
+    icon: 'RefreshCw',
+    title: 'Website Redesign',
+    description: 'Transform outdated websites into modern, professional digital experiences with improved layouts, refreshed visuals and responsive designs that make your business stand out.',
+    features: ['Modern UI & Layout Improvements', 'Responsive Improvements', 'Content Restructuring', 'SEO-Friendly Structure','Improved User Experience'],
+    price: 'Starting at custom quote',
+    image: '/services/redesign.jpg',
   },
   {
     id: 4,
-    title: 'Horizon Escape',
-    category: 'Web Design',
-    image: 'https://images.pexels.com/photos/285814/pexels-photo-285814.jpeg?auto=compress&cs=tinysrgb&h=600&w=800',
-    description: 'A travel website concept designed to present destinations, experiences and travel information through a visually engaging responsive layout.',
-    tags: ['WordPress', 'Travel', 'Business Website'],
-    year: '2024',
+    icon: 'LayoutTemplate',
+    title: 'Landing Page Development',
+    description: 'High-converting landing pages designed to showcase your offer, highlight key benefits and encourage visitors to take action through clear content and strategic layouts.',
+    features: ['Business Landing Pages', 'Lead Generation', 'Conversion-Focused Layout', 'Mobile Responsive Design'],
+    price: 'Starting at custom quote',
+    image: '/services/landing.jpg',
   },
-  {
+   {
     id: 5,
-    title: 'GymFitness',
-    category: 'Web Design',
-    image: 'https://images.pexels.com/photos/12802261/pexels-photo-12802261.jpeg?auto=compress&cs=tinysrgb&h=600&w=800',
-    description: 'A fitness website concept with program sections, service information, strong calls to action and a structure suitable for gyms and fitness businesses.',
-    tags: ['WordPress', 'Fitness', 'Business Website'],
-    year: '2025',
+    icon: 'Code2',
+    title: 'Custom Website Development',
+    description: 'Develop tailored websites for businesses and professionals with modern designs, responsive layouts and functional features that support your goals and online presence.',
+    features: ['Custom Website Solutions', 'Responsive Website Development', 'Business Website Design', 'Custom Feature Implementation'],
+    price: 'Starting at custom quote',
+    image: '/services/marketing-agency-western-sydney.jpg',
   },
   {
     id: 6,
-    title: 'AuraSkin Co.',
-    category: 'E-Commerce',
-    image: 'https://images.pexels.com/photos/7661590/pexels-photo-7661590.jpeg?auto=compress&cs=tinysrgb&h=600&w=800',
-    description: 'A Shopify beauty store concept with a refined product-focused layout, responsive storefront and clear shopping experience.',
-    tags: ['Shopify', 'eCommerce', 'Beauty'],
+    icon: 'ShoppingBag',
+    title: 'Shopify Development',
+    description: 'Professional Shopify stores with responsive storefronts, organized product layouts and a smooth shopping experience for growing online businesses worldwide.',
+    features: ['Shopify Store Setup', 'Product & Collection Pages', 'Theme Customization', 'Mobile-Friendly Store Design'],
+    price: 'Starting at custom quote',
+    image: '/services/shopify.jpg',
+  },
+  {
+    id: 7,
+    icon: 'Store',
+    title: 'eCommerce Development',
+    description: 'Scalable WooCommerce stores with organized product layouts, easy navigation and a seamless shopping experience for online customers.',
+    features: ['WooCommerce Development', 'Product & Category Setup', 'Product Variations Setup' ,'Shopping Cart & Checkout', 'Responsive Store Design'],
+    price: 'Starting at custom quote',
+    image: '/services/eCommerce-Development.jpg',
+  },
+  {
+    id: 8,
+    icon: 'Monitor',
+    title: 'Wix Development',
+    description: 'Build professional Wix websites for small businesses, professionals and personal brands with flexible layouts, engaging visuals and easy-to-manage content.',
+    features: ['Wix Business Websites', 'Custom Wix Page Design', 'Responsive Website Layouts', 'Wix Content & Section Updates'],
+    price: 'Starting at custom quote',
+    image: '/services/wix.jpg',
+  },
+  {
+    id: 9,
+    icon: 'FileCode',
+    title: 'PSD to WordPress',
+    description: 'Convert PSD designs into responsive, functional web pages while maintaining the original design direction, visual consistency and layout details.',
+    features: ['PSD to WordPress Conversion', 'Pixel-Accurate Design', 'Responsive Page Development', 'Design & Typography Matching','Cross-Browser Compatibility'],
+    price: 'Starting at custom quote',
+    image: '/services/design-in-photoshop.png',
+  },
+  {
+    id: 10,
+    icon: 'Wrench',
+    title: 'Website Maintenance & Bug Fixes',
+    description: 'Keep your website running smoothly with regular updates, troubleshooting and technical fixes to resolve common issues and maintain reliable website functionality.',
+    features: ['WordPress Updates & Maintenance', 'Plugin & Theme Conflict Fixes', 'Layout Errors & Bug Fixes', 'Website Backup & Recovery Support', 'Website Functionality Testing'],
+    price: 'Starting at custom quote',
+    image: '/services/critical-error.png',
+  },
+  {
+    id: 11,
+    icon: 'Search',
+    title: 'Website SEO & Speed Optimization',
+    description: 'Improve your website’s technical and on-page seo structure, metadata, image optimization, internal linking and speed-focused enhancements for a smoother browsing experience.',
+    features: ['Website Speed Optimization','On-Page SEO Improvements', 'Technical SEO Setup', 'Image & Asset Optimization', 'Mobile Performance Improvements'],
+    price: 'Starting at custom quote',
+    image: '/services/seo.jpg',
+  },
+  {
+    id: 12,
+    icon: 'ArrowRightLeft',
+    title: 'Website Migration',
+    description: 'Move your website to a new hosting provider, domain or platform with careful file and database transfers, configuration checks and functionality testing procedures.',
+    features: ['Website & Hosting Migration', 'WordPress Site Transfers', 'Domain & URL Configuration', 'Post-Migration Testing', 'Website Backup Transfer'],
+    price: 'Starting at custom quote',
+    image: '/services/migrate.png',
+  },
+  {
+    id: 14,
+    icon: 'BookOpen',
+    title: 'Blogger Website Development',
+    description: 'Design and customize Blogger websites with attractive templates, structured blog layouts and easy navigation to publish content and engage readers effectively.',
+    features: ['Blogger theme Customization', 'Mobile-Friendly Templates','Post & Category Setup', 'Navigation & Content Setup'],
+    price: 'Starting at custom quote',
+    image: '/services/blog.jpg',
+  },
+  {
+    id: 15,
+    icon: 'PencilLine',
+    title: 'SEO Content Writing',
+    description: 'Professional, SEO-optimized content with relevant keywords, clear structure and engaging copy to improve readability, strengthen search visibility and connect with your target audience.',
+    features: ['SEO Blog Article Writing', 'Keyword Research & Placement','Website Content Optimization', 'Meta Titles & Descriptions'],
+    price: 'Starting at custom quote',
+    image: '/services/content.jpg',
+  },
+  {
+    id: 16,
+    icon: 'FileDown',
+    title: 'Digital Products',
+    description: 'Create and set up digital product experiences that make it easy to showcase, sell and deliver downloadable resources through a professional online storefront.',
+    features: ['eBook & Digital Download Stores', 'Social Media Templates & Digital Planners', 'Digital Product Page Setup', 'Online Payment & Delivery Setup'],
+    price: 'Starting at custom quote',
+    image: '/services/ebook.jpg',
+  },
+  
+];
+
+export type ProjectCategory =
+  | 'Web Development'
+  | 'WordPress'
+  | 'Website Redesign'
+  | 'Custom Website'
+  | 'E-Commerce'
+  | 'Shopify'
+  | 'Wix'
+  | 'Landing Page';
+
+export interface Project {
+  id: number;
+  title: string;
+  categories: ProjectCategory[]; // 2-3 categories
+  tags: string[];                // tech / skills
+  year: string;
+  image: string;
+  description: string;
+}
+
+export const projects: Project[] = [
+  {
+    id: 1,
+    title: 'Fydexa Digital',
+    categories: ['Web Development', 'WordPress'],
+    tags: ['Business Website', 'Digital Marketing', 'Marketing Agency', 'SEO Services'],
     year: '2025',
+    image: '/projects/1.png',
+    description: 'A professional digital marketing agency website designed to showcase services, strengthen brand credibility, and provide a seamless experience for potential clients.',
+  },
+  {
+    id: 2,
+    title: 'Restaurant Website',
+    categories: ['Web Development', 'WordPress'],
+    tags: ['Healthcare Website', 'Psychology', 'Therapy','Mental Health' , 'Health & Wellness'],
+    year: '2025',
+    image: '/projects/2.png',
+    description: 'Professional counseling website designed with a calm, user-friendly layout to present therapy services, build trust, and help visitors easily find relevant support and contact information.',
+  },
+  {
+    id: 3,
+    title: 'Product Launch Page',
+    categories: ['Web Development', 'WordPress'],
+    tags: ['Gym & Fitness', 'Business Website', 'Fitness Training', 'Membership Website'],
+    year: '2024',
+    image: '/projects/3.png',
+    description: 'A modern gym website showcasing fitness programs, workout facilities, and membership services through an engaging layout that encourages visitors to take the next step in their fitness journey.',
   },
 ];
 
@@ -316,17 +226,17 @@ export const faqs = [
   {
     id: 1,
     question: 'What type of websites do you build?',
-    answer: 'I build WordPress business websites, Shopify stores, WooCommerce eCommerce websites, landing pages, portfolio websites and custom WordPress solutions.',
+    answer: 'I build WordPress business and corporate websites, Shopify stores, WooCommerce eCommerce websites, landing pages, portfolio websites and custom WordPress solutions.',
   },
   {
     id: 2,
-    question: 'Do you redesign existing websites?',
-    answer: 'Yes. I can redesign outdated websites, improve responsive layouts and restructure pages around your current business goals.',
+    question: 'Can you redesign or improve my existing website?',
+    answer: 'Yes! I can redesign your existing website to improve its layout, appearance, responsiveness, navigation and overall functionality while keeping your business goals in focus.',
   },
   {
     id: 3,
-    question: 'Do you work with Shopify and WooCommerce?',
-    answer: 'Yes. I work with both Shopify and WooCommerce for eCommerce website projects, including storefront structure, product presentation and responsive layouts.',
+    question: 'Do you work with Shopify, Wix and WooCommerce?',
+    answer: 'Yes, I work with Shopify, Wix and WooCommerce to build and customize online stores and business websites, including product pages, store layouts and essential eCommerce features.',
   },
   {
     id: 4,
@@ -335,18 +245,18 @@ export const faqs = [
   },
   {
     id: 5,
-    question: 'Will my website be mobile responsive?',
-    answer: 'Yes. Websites are developed with responsive layouts and should be reviewed across desktop, tablet and mobile screen sizes before launch.',
+    question: 'Will my website work on mobile devices?',
+    answer: 'Yes, I build responsive websites that adapt to desktops, tablets and smartphones, providing a consistent browsing experience across different screen sizes.',
   },
   {
     id: 6,
-    question: 'Can you improve website speed?',
-    answer: 'Yes. I can review common performance issues such as oversized images, unnecessary scripts, layout problems and implementation choices that affect loading performance.',
+    question: 'Do you offer website maintenance and speed optimization?',
+    answer: 'Yes, I provide website maintenance, bug fixing, plugin and theme updates, layout corrections, performance optimization and troubleshooting to help keep your website running smoothly.',
   },
   {
     id: 7,
-    question: 'Can you convert Figma or PSD designs to WordPress?',
-    answer: 'Yes. Approved Figma or PSD designs can be converted into responsive WordPress pages while maintaining the intended layout, spacing, typography and responsive behavior.',
+    question: 'Can you convert PSD or Figma designs into WordPress websites?',
+    answer: 'Yes, I can convert PSD or Figma designs into responsive WordPress pages, focusing on accurate layouts, consistent styling, mobile compatibility and functional implementation.',
   },
 ];
 
@@ -383,7 +293,7 @@ export const processSteps = [
 export const navLinks = [
   { label: 'Home', href: '#home' },
   { label: 'Services', href: '#services' },
-  { label: 'Work', href: '#work' },
   { label: 'About', href: '#about' },
+  { label: 'Projects', href: '#projects' },
   { label: 'Contact', href: '#contact' },
 ];

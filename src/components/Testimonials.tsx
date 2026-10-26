@@ -20,7 +20,7 @@ export default function Testimonials() {
   const prev = () => setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section id="testimonials" className="relative py-20 lg:py-28 bg-ink-50">
+    <section id="testimonials" className="relative py-20 lg:py-28 bg-[#fcf9f1]">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
           {/* Left: Heading */}

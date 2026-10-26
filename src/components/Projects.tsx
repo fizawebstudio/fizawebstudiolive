@@ -3,16 +3,28 @@ import { ArrowUpRight, Calendar } from 'lucide-react';
 import { projects } from '@/data';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
-const categories = ['All', 'Web Design', 'E-Commerce', 'Shopify', 'Landing Page'];
+const categories = [
+  'All',
+  'Web Development',
+  'WordPress',
+  'Website Redesign',
+  'Custom Website',
+  'E-Commerce',
+  'Shopify',
+  'Wix',
+  'Landing Page',
+];
 
 export default function Projects() {
   const [filter, setFilter] = useState('All');
-  const filtered = filter === 'All'
-    ? projects
-    : projects.filter((project) => project.category === filter || project.tags.includes(filter));
+
+  const filtered =
+    filter === 'All'
+      ? projects
+      : projects.filter((project) => project.categories.includes(filter as any));
 
   return (
-    <section id="work" className="relative py-20 lg:py-28 bg-ink-50">
+    <section id="projects" className="relative py-20 lg:py-28">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
           {/* Left: Sticky heading + filters */}
@@ -28,7 +40,8 @@ export default function Projects() {
                 Explore my <span className="text-accent-500">latest projects</span>
               </h2>
               <p className="text-base text-ink-500 leading-relaxed mb-6">
-                Explore a collection of websites I’ve designed and developed, built with a focus on modern design, smooth functionality, and a seamless user experience.  
+                Explore a collection of websites I’ve designed and developed, built with a focus on
+                modern design, smooth functionality, and a seamless user experience.
               </p>
 
               {/* Filter tabs */}
@@ -52,8 +65,11 @@ export default function Projects() {
 
           {/* Right: Project cards */}
           <div className="lg:col-span-8 space-y-6">
+            {filtered.length === 0 && (
+              <p className="text-sm text-ink-500">No projects in this category yet.</p>
+            )}
             {filtered.map((project, i) => (
-              <ProjectCard key={project.id} project={project} index={i} />
+              <ProjectCard key={`${filter}-${project.id}`} project={project} index={i} />
             ))}
           </div>
         </div>
@@ -83,8 +99,16 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
           />
-          <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur text-[10px] font-semibold text-ink-700">
-            {project.category}
+          {/* Multiple category badges (max 3) */}
+          <div className="absolute top-3 left-3 right-3 flex flex-wrap gap-1.5">
+            {project.categories.slice(0, 3).map((cat) => (
+              <span
+                key={cat}
+                className="px-2.5 py-1 rounded-full bg-white/90 backdrop-blur text-[10px] font-semibold text-ink-700"
+              >
+                {cat}
+              </span>
+            ))}
           </div>
         </div>
 
@@ -97,9 +121,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
           <h3 className="font-display font-bold text-lg text-ink-900 mb-2 group-hover:text-accent-500 transition-colors">
             {project.title}
           </h3>
-          <p className="text-sm text-ink-500 leading-relaxed mb-4">
-            {project.description}
-          </p>
+          <p className="text-sm text-ink-500 leading-relaxed mb-4">{project.description}</p>
           <div className="flex flex-wrap gap-1.5 mb-4">
             {project.tags.map((tag) => (
               <span

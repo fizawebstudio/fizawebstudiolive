@@ -47,7 +47,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-20 lg:py-28 bg-ink-50">
+    <section id="contact" className="relative py-20 lg:py-28 bg-[#fcf9f1]">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <SectionHeading
           eyebrow="Contact"
@@ -106,7 +106,7 @@ Whether you need a new WordPress website, Shopify store, landing page or improve
                 <Field
                   label="Your Name"
                   type="text"
-                  placeholder="Jane Doe"
+                  placeholder="John Doe"
                   value={form.name}
                   onChange={(v) => setForm({ ...form, name: v })}
                   required
@@ -114,7 +114,7 @@ Whether you need a new WordPress website, Shopify store, landing page or improve
                 <Field
                   label="Email Address"
                   type="email"
-                  placeholder="jane@company.com"
+                  placeholder="john@company.com"
                   value={form.email}
                   onChange={(v) => setForm({ ...form, email: v })}
                   required

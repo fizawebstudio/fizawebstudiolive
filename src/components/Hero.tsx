@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ArrowRight, ArrowUpRight, Monitor, SearchCheck, ShoppingCart, Smartphone } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Monitor, SearchCheck, ShoppingCart, Smartphone, LayoutTemplate } from 'lucide-react';
 
 const roles = ['WordPress Developer', 'Shopify Developer', 'Freelance Web Developer', 'eCommerce Website Developer'];
 
@@ -19,19 +19,21 @@ const highlights = [
   {
     title: 'Responsive',
     description: 'Website Development',
-    Icon: Smartphone,
+    Icon: LayoutTemplate,
     iconStyle: 'bg-pink-100 text-pink-500',
   },
 ];
 
 const chipBase =
-  'absolute z-20 flex items-center gap-2 sm:gap-3 rounded-2xl bg-white px-[0.65rem] py-[0.7rem] shadow-xl shadow-ink-900/10 animate-float-card';
+  'absolute z-20 flex items-center gap-2 sm:gap-3 rounded-2xl bg-white px-[0.55rem] py-[0.5rem] sm:px-[0.65rem] sm:py-[0.7rem] shadow-xl shadow-ink-900/10 animate-float-card';
 
 // Title text inside the boxes
-const boxTitle = 'font-semibold text-ink-900 text-[13px] mb-[3px]';
+const boxTitle =
+  'font-semibold text-ink-900 text-[11px] sm:text-[13px] min-[1023px]:max-[1300px]:text-[12px] mb-[-1px] sm:mb-[3px]';
 
 // Subtitle text inside the boxes
-const subText = 'text-ink-500 text-[12px] leading-[1.2rem]';
+const subText =
+  'text-ink-500 text-[11px] sm:text-[12px] min-[1023px]:max-[1300px]:text-[11px] leading-[1.2rem]';
 
 export default function Hero({ id = 'home' }: { id?: string }) {
   const [textIndex, setTextIndex] = useState(0);
@@ -61,7 +63,7 @@ export default function Hero({ id = 'home' }: { id?: string }) {
   }, [displayText, isDeleting, textIndex]);
 
   return (
-    <section id={id} className="relative min-h-screen flex items-center pt-36 pb-12 overflow-hidden">
+    <section id={id} className="relative min-h-screen flex items-center pt-32 pb-16 overflow-hidden">
       {/* Animated background orbs */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-accent-500/10 blur-[100px] animate-pulse-slow" />
@@ -86,10 +88,10 @@ export default function Hero({ id = 'home' }: { id?: string }) {
 
             <div className="flex flex-wrap items-center gap-4 animate-fade-up animation-delay-300">
               <a
-                href="#work"
+                href="#projects"
                 onClick={(e) => {
                   e.preventDefault();
-                  document.querySelector('#work')?.scrollIntoView({ behavior: 'smooth' });
+                  document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
                 }}
                 className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-accent-500 text-white font-semibold text-sm hover:bg-accent-600 hover:shadow-lg hover:shadow-accent-500/30 hover:-translate-y-0.5 transition-all duration-300"
               >
@@ -143,6 +145,8 @@ export default function Hero({ id = 'home' }: { id?: string }) {
                 src="/image.png"
                 alt="Fiza Asif, freelance web developer"
                 className="absolute inset-0 z-10 h-full w-full object-contain"
+                width={1153}
+                height={1148}
                 loading="eager"
               />
 
@@ -156,7 +160,7 @@ export default function Hero({ id = 'home' }: { id?: string }) {
               </div>
 
               {/* Shopify – top right */}
-              <div className={`${chipBase} top-[12%] right-0 lg:-right-[12%]`} style={{ animationDelay: '1s' }}>
+              <div className={`${chipBase} top-[12%] right-[-21px] min-[1023px]:right-[-12%]`} style={{ animationDelay: '1s' }}>
                 <img src="/logos/shopify.svg" alt="Shopify logo" className="w-[30px] shrink-0" />
                 <div className="text-[11px] sm:text-sm leading-snug">
                   <div className={boxTitle}>Shopify</div>
@@ -165,7 +169,7 @@ export default function Hero({ id = 'home' }: { id?: string }) {
               </div>
 
               {/* Wix – middle right */}
-              <div className={`${chipBase} top-[40%] right-0 lg:-right-[28%]`} style={{ animationDelay: '1.5s' }}>
+              <div className={`${chipBase} top-[40%] right-[-21px] min-[1023px]:right-[-28%] min-[1023px]:max-[1300px]:right-[-20%]`} style={{ animationDelay: '1.5s' }}>
                 <img src="/logos/wix.svg" alt="Wix logo" className="w-[30px] shrink-0" />
                 <div className="text-[11px] sm:text-sm leading-snug">
                   <div className={boxTitle}>Wix</div>
@@ -174,7 +178,7 @@ export default function Hero({ id = 'home' }: { id?: string }) {
               </div>
 
               {/* eCommerce – lower right */}
-              <div className={`${chipBase} top-[66%] right-0 lg:-right-[25%]`} style={{ animationDelay: '2s' }}>
+              <div className={`${chipBase} top-[66%] right-[-21px] min-[1023px]:right-[-22%]`} style={{ animationDelay: '2s' }}>
                 <ShoppingCart size={30} strokeWidth={2} className="shrink-0 text-orange-500" aria-hidden="true" />
                 <div className="text-[11px] sm:text-sm leading-snug">
                   <div className={boxTitle}>eCommerce</div>

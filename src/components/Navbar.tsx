@@ -76,7 +76,7 @@ export default function Navbar() {
                 >
                   {link.label}
                   {active && (
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-5 h-1 rounded-full bg-accent-500" />
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-5 h-[0.15rem] rounded-full bg-accent-500" />
                   )}
                 </a>
               </li>
@@ -111,7 +111,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div
         className={`lg:hidden overflow-hidden transition-all duration-500 ${
-          mobileOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
+          mobileOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
         <div className="px-6 pb-6 pt-2 space-y-1 bg-white border-b border-ink-100">

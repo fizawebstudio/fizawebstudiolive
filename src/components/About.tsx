@@ -3,26 +3,28 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 const skills = [
   { name: 'WordPress Development', level: 96 },
-  { name: 'Shopify Development', level: 94 },
+  { name: 'Shopify & Wix Development', level: 94 },
   { name: 'eCommerce Development', level: 92 },
-  { name: 'Website Optimization', level: 90 },
+  { name: 'Website Maintenance & Optimization', level: 96 },
 ];
 
 export default function About() {
   const { ref, visible } = useScrollReveal();
 
   return (
-    <section id="about" className="relative bg-[#fcf9f1] py-20 lg:py-28">
+    <section id="about" className="relative bg-[#fcf9f1] py-20 lg:py-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
           {/* Left: Image */}
           <div ref={ref} className={`lg:col-span-5 ${visible ? 'animate-fade-up' : 'opacity-0'}`}>
             <div className="relative max-w-sm mx-auto">
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden">
+              <div className="relative aspect-[4/5] rounded-3xl ">
                 <img
                   src="/abouts.png"
                   alt="Fiza Asif working at her laptop"
-                  className="w-full h-full object-cover object-left"
+                  className="w-full h-auto object-cover object-left"
+                  width={1024}
+                  height={1536}
                   loading="lazy"
                 />
               </div>
@@ -40,11 +42,10 @@ export default function About() {
 
             <div className="space-y-3 text-ink-500 leading-relaxed">
               <p>
-                I’m Fiza Asif, a freelance web developer focused on building modern websites for businesses, professionals and online brands. My core expertise is WordPress, Shopify and eCommerce development, along with website redesign, landing pages and website optimization.
+                I’m Fiza Asif, a freelance web developer specializing in modern, responsive websites for businesses, professionals and online brands. My core expertise includes WordPress, Shopify, Wix and eCommerce development, along with website redesign, landing pages, SEO, website maintenance and performance optimization.
               </p>
               <p>
-                I approach every project with a focus on responsive development, clear content structure, usability and search-friendly implementation. Whether you need a new business website, an online store or improvements to an existing site, I build around your goals, audience and content.
-              </p>
+                I focus on building user-friendly websites with responsive layouts, clear content structure and search-friendly implementation. Whether you need a new business website, an online store, website updates or technical support, I provide practical solutions designed around your goals, audience and content.              </p>
             </div>
 
             {/* Skills */}

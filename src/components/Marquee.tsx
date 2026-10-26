@@ -1,8 +1,22 @@
+
 const items = [
-  'Web Design', 'Brand Identity', 'UI/UX', 'Motion Design',
-  'E-Commerce', 'Mobile Apps', 'SEO', 'Prototyping',
-  'Design Systems', 'Art Direction',
+  'WordPress Development',
+  'Shopify Development',
+  'eCommerce Solutions',
+  'Wix Development',
+  'Custom Website Development',
+  'Landing Page Development',
+  'Website Redesign',
+  'PSD to WordPress',
+  'Website Maintenance',
+  'SEO & Speed Optimization',
+  'Website Migration',
+  'Blogger Website Development',
+  'SEO Content Writing',
+  'Amazon KDP Services',
+  'Digital Products',
 ];
+
 
 export default function Marquee() {
   return (

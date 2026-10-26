@@ -12,8 +12,8 @@ export default function FAQ() {
       <div className="max-w-4xl mx-auto px-6 lg:px-10">
         <SectionHeading
           eyebrow="FAQ"
-          title={<>Questions? <span className="text-accent-500">I've got answers</span></>}
-          description="A few common questions about website development, redesigns, eCommerce and ongoing website support."
+          title={<>Frequently Asked <span className="text-accent-500">Questions</span></>}
+          description="Find answers to your questions about my web development services, website redesigns, eCommerce solutions, and ongoing website maintenance."
         />
 
         <div className="mt-12 space-y-3">

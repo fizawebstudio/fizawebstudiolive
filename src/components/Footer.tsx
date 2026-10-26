@@ -21,7 +21,7 @@ export default function Footer() {
               Ready to start your <span className="text-accent-500">next web project?</span>
             </h3>
             <p className="text-ink-300 max-w-2xl mx-auto mb-6 text-sm">
-              Whether you need a new WordPress website, Shopify store, landing page or improvements to an existing website, let’s discuss what you need and find the right approach.
+              Whether you need a business website, eCommerce store, landing page or website redesign, let’s discuss your goals and find the right solution for your project.
             </p>
             <a
               href="#contact"
@@ -48,7 +48,7 @@ export default function Footer() {
               />
             </a>
             <p className="text-sm text-ink-500 leading-relaxed max-w-sm">
-Freelance web development for businesses and online brands, specializing in WordPress, Shopify, eCommerce websites, redesigns and website optimization.
+              Freelance web developer helping businesses and online brands build professional websites, eCommerce stores and landing pages, with expertise in WordPress, Shopify, Wix, website redesign, SEO and website optimization.
             </p>
             <div className="flex gap-2">
               {socials.map((s, i) => (
