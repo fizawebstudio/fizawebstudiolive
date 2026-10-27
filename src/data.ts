@@ -164,12 +164,12 @@ export const projects: Project[] = [
     categories: ['Web Development', 'WordPress'],
     tags: ['Business Website', 'Digital Marketing', 'Marketing Agency', 'SEO Services'],
     year: '2025',
-    image: '/projects/1.png',
+    image: '/projects/1-1.png',
     description: 'A professional digital marketing agency website designed to showcase services, strengthen brand credibility, and provide a seamless experience for potential clients.',
   },
   {
     id: 2,
-    title: 'Restaurant Website',
+    title: 'Healing With Aymen',
     categories: ['Web Development', 'WordPress'],
     tags: ['Healthcare Website', 'Psychology', 'Therapy','Mental Health' , 'Health & Wellness'],
     year: '2025',
@@ -178,12 +178,21 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    title: 'Product Launch Page',
+    title: 'GymFitness',
     categories: ['Web Development', 'WordPress'],
-    tags: ['Gym & Fitness', 'Business Website', 'Fitness Training', 'Membership Website'],
+    tags: ['Gym & Fitness Website', 'Business Website', 'Fitness Training', 'Membership Website'],
     year: '2024',
     image: '/projects/3.png',
     description: 'A modern gym website showcasing fitness programs, workout facilities, and membership services through an engaging layout that encourages visitors to take the next step in their fitness journey.',
+  },
+  {
+    id: 4,
+    title: 'AuraSkin Co.',
+    categories: ['Web Development', 'Shopify'],
+    tags: ['Shopify Store', 'Skincare Website', 'eCommerce Website', 'Beauty & Skincare'],
+    year: '2024',
+    image: '/projects/4.png',
+    description: 'Modern Shopify skincare store featuring elegant product displays, a calming sage-green and beige palette, and a responsive shopping experience. Access the website using the provided password-protected link.',
   },
 ];
 
