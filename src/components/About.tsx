@@ -20,12 +20,13 @@ export default function About() {
             <div className="relative max-w-sm mx-auto">
               <div className="relative aspect-[4/5] rounded-3xl ">
                 <img
-                  src="/abouts.png"
+                  src="/abouts.webp"
                   alt="Fiza Asif working at her laptop"
-                  className="w-full h-auto object-cover object-left"
-                  width={1024}
-                  height={1536}
+                  className="h-full w-full rounded-3xl object-cover object-left"
+                  width={768}
+                  height={1152}
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>

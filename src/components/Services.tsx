@@ -86,12 +86,15 @@ function ServiceCard({
           alt={service.title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           loading="lazy"
+          decoding="async"
+          width={800}
+          height={540}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-white via-white/30 to-transparent" />
 
         {/* Icon badge */}
         <div className="absolute bottom-3 left-4 w-12 h-12 rounded-xl bg-white shadow-md border-ink-100 flex items-center justify-center group-hover:bg-accent-500 transition-colors duration-300">
-          <Icon size={22} className="text-accent-500 group-hover:text-white transition-colors" />
+          <Icon size={22} className="text-accent-500 group-hover:text-ink-900 transition-colors" aria-hidden="true" />
         </div>
       </div>
 
@@ -107,7 +110,7 @@ function ServiceCard({
         <ul className="space-y-1.5 mb-4">
           {service.features.map((f) => (
             <li key={f} className="flex items-center gap-2 text-xs text-ink-600">
-              <Check size={13} className="text-accent-500 shrink-0" />
+              <Check size={13} className="text-accent-500 shrink-0" aria-hidden="true" />
               {f}
             </li>
           ))}
@@ -121,7 +124,7 @@ function ServiceCard({
               e.preventDefault();
               document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="w-8 h-8 rounded-lg flex items-center justify-center text-ink-400 group-hover:bg-accent-500 group-hover:text-white transition-all duration-300"
+            className="w-8 h-8 rounded-lg flex items-center justify-center text-ink-500 group-hover:bg-accent-500 group-hover:text-white transition-all duration-300"
           >
             <ArrowUpRight size={15} />
           </a>

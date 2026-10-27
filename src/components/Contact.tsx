@@ -8,7 +8,7 @@ const contactInfo = [
   { icon: Mail, label: 'Email', value: 'fizawebstudio@gmail.com', href: 'mailto:fizawebstudio@gmail.com' },
   { icon: Phone, label: 'Phone', value: '+92 312 7195206', href: 'tel:+923127195206' },
   { icon: Clock, label: 'Availability', value: 'Available anytime — replies within a few hours' },
-  { icon: MapPin, label: 'Location', value: 'Pakistan, Lahore - Remote', href: '#' },
+  { icon: MapPin, label: 'Location', value: 'Pakistan, Lahore - Remote' },
 ];
 
 export default function Contact() {
@@ -76,7 +76,7 @@ Whether you need a new WordPress website, Shopify store, landing page or improve
                       <info.icon size={18} className="text-accent-500 group-hover:text-white transition-colors" />
                     </div>
                     <div>
-                      <div className="text-[10px] text-ink-400 font-medium uppercase tracking-wide">{info.label}</div>
+                      <div className="text-[10px] text-ink-500 font-medium uppercase tracking-wide">{info.label}</div>
                       <div className="text-sm font-semibold text-ink-900">{info.value}</div>
                     </div>
                   </>
@@ -101,22 +101,27 @@ Whether you need a new WordPress website, Shopify store, landing page or improve
             <form
               onSubmit={handleSubmit}
               className="bg-white rounded-2xl p-6 lg:p-8 border border-ink-100 shadow-sm space-y-5"
+              aria-busy={status === 'sending'}
             >
               <div className="grid sm:grid-cols-2 gap-5">
                 <Field
                   label="Your Name"
+                  id="contact-name"
                   type="text"
                   placeholder="John Doe"
                   value={form.name}
                   onChange={(v) => setForm({ ...form, name: v })}
+                  autoComplete="name"
                   required
                 />
                 <Field
                   label="Email Address"
+                  id="contact-email"
                   type="email"
                   placeholder="john@company.com"
                   value={form.email}
                   onChange={(v) => setForm({ ...form, email: v })}
+                  autoComplete="email"
                   required
                 />
               </div>
@@ -124,19 +129,23 @@ Whether you need a new WordPress website, Shopify store, landing page or improve
               <div className="grid sm:grid-cols-2 gap-5">
                 <Field
                   label="Phone Number"
+                  id="contact-phone"
                   type="tel"
                   placeholder="+1 (415) 555-0142"
                   value={form.phone}
                   onChange={(v) => setForm({ ...form, phone: v })}
+                  autoComplete="tel"
                 />
                 <div>
-                  <label className="block text-xs font-semibold text-ink-700 mb-2 uppercase tracking-wide">
+                  <label htmlFor="contact-service" className="block text-xs font-semibold text-ink-700 mb-2 uppercase tracking-wide">
                     Services Interested In
                   </label>
                   <div className="relative">
                     <select
+                      id="contact-service"
                       value={form.services}
                       onChange={(e) => setForm({ ...form, services: e.target.value })}
+                      name="service"
                       className="w-full appearance-none px-4 py-3 pr-10 rounded-xl bg-ink-50 border border-ink-100 text-ink-900 focus:outline-none focus:border-accent-400 focus:ring-2 focus:ring-accent-500/20 transition-all cursor-pointer"
                     >
                       <option value="">Select a service...</option>
@@ -146,23 +155,25 @@ Whether you need a new WordPress website, Shopify store, landing page or improve
                         </option>
                       ))}
                     </select>
-                    <ChevronDown size={16} className="absolute right-3 top-1/2 -translate-y-1/2 text-ink-400 pointer-events-none" />
+                    <ChevronDown size={16} aria-hidden="true" className="absolute right-3 top-1/2 -translate-y-1/2 text-ink-500 pointer-events-none" />
                   </div>
                 </div>
               </div>
 
               {/* Message */}
               <div>
-                <label className="block text-xs font-semibold text-ink-700 mb-2 uppercase tracking-wide">
+                <label htmlFor="contact-message" className="block text-xs font-semibold text-ink-700 mb-2 uppercase tracking-wide">
                   Message
                 </label>
                 <textarea
+                  id="contact-message"
+                  name="message"
                   required
                   rows={4}
                   placeholder="Tell me about your project — what you're building, timeline, goals..."
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-ink-50 border border-ink-100 text-ink-900 placeholder:text-ink-400 focus:outline-none focus:border-accent-400 focus:ring-2 focus:ring-accent-500/20 transition-all resize-none"
+                  className="w-full px-4 py-3 rounded-xl bg-ink-50 border border-ink-100 text-ink-900 placeholder:text-ink-500 focus:outline-none focus:border-accent-400 focus:ring-2 focus:ring-accent-500/20 transition-all resize-none"
                 />
               </div>
 
@@ -170,7 +181,7 @@ Whether you need a new WordPress website, Shopify store, landing page or improve
               <button
                 type="submit"
                 disabled={status === 'sending' || status === 'sent' || status === 'saved'}
-                className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-accent-500 text-white font-semibold text-sm hover:bg-accent-600 transition-colors duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-accent-500 text-white font-semibold text-sm hover:bg-accent-600 transition-colors duration-300 disabled:cursor-not-allowed"
               >
                 {status === 'idle' && (
                   <>Send Message <Send size={16} /></>
@@ -190,17 +201,17 @@ Whether you need a new WordPress website, Shopify store, landing page or improve
               </button>
 
               {status === 'sent' && (
-                <p className="text-center text-sm text-green-600 font-medium animate-fade-in">
+                <p role="status" aria-live="polite" className="text-center text-sm text-green-600 font-medium animate-fade-in">
                   Thanks! I'll get back to you within 24 hours.
                 </p>
               )}
               {status === 'saved' && (
-                <p className="text-center text-sm text-amber-600 font-medium animate-fade-in">
+                <p role="status" aria-live="polite" className="text-center text-sm text-amber-600 font-medium animate-fade-in">
                   Your inquiry was saved. The email notification will be delivered shortly.
                 </p>
               )}
               {status === 'error' && (
-                <p className="text-center text-sm text-red-500 font-medium animate-fade-in">
+                <p role="alert" className="text-center text-sm text-red-500 font-medium animate-fade-in">
                   Something went wrong. Please try again or email me directly.
                 </p>
               )}
@@ -214,31 +225,38 @@ Whether you need a new WordPress website, Shopify store, landing page or improve
 
 function Field({
   label,
+  id,
   type,
   placeholder,
   value,
   onChange,
+  autoComplete,
   required,
 }: {
   label: string;
+  id: string;
   type: string;
   placeholder: string;
   value: string;
   onChange: (v: string) => void;
+  autoComplete: string;
   required?: boolean;
 }) {
   return (
     <div>
-      <label className="block text-xs font-semibold text-ink-700 mb-2 uppercase tracking-wide">
+      <label htmlFor={id} className="block text-xs font-semibold text-ink-700 mb-2 uppercase tracking-wide">
         {label}
       </label>
       <input
+        id={id}
+        name={id.replace('contact-', '')}
         type={type}
+        autoComplete={autoComplete}
         required={required}
         placeholder={placeholder}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full px-4 py-3 rounded-xl bg-ink-50 border border-ink-100 text-ink-900 placeholder:text-ink-400 focus:outline-none focus:border-accent-400 focus:ring-2 focus:ring-accent-500/20 transition-all"
+        className="w-full px-4 py-3 rounded-xl bg-ink-50 border border-ink-100 text-ink-900 placeholder:text-ink-500 focus:outline-none focus:border-accent-400 focus:ring-2 focus:ring-accent-500/20 transition-all"
       />
     </div>
   );

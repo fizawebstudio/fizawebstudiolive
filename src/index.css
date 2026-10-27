@@ -19,11 +19,38 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  .skip-link {
+    position: fixed;
+    top: 0.75rem;
+    left: 0.75rem;
+    z-index: 100;
+    transform: translateY(-200%);
+    border-radius: 0.5rem;
+    background: #0a0c14;
+    color: #fff;
+    padding: 0.75rem 1rem;
+  }
+
+  .skip-link:focus {
+    transform: translateY(0);
+  }
+
   body {
     font-family: 'Inter', system-ui, sans-serif;
     overflow-x: hidden;
     background: #ffffff;
     color: #0a0c14;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 
   ::selection {

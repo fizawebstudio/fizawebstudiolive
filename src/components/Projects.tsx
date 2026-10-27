@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { ArrowUpRight, Calendar } from 'lucide-react';
-import { projects } from '@/data';
+import { projects, type ProjectCategory } from '@/data';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
-const categories = [
+const categories: Array<'All' | ProjectCategory> = [
   'All',
   'Web Development',
   'WordPress',
@@ -16,12 +16,12 @@ const categories = [
 ];
 
 export default function Projects() {
-  const [filter, setFilter] = useState('All');
+  const [filter, setFilter] = useState<'All' | ProjectCategory>('All');
 
   const filtered =
     filter === 'All'
       ? projects
-      : projects.filter((project) => project.categories.includes(filter as any));
+      : projects.filter((project) => project.categories.includes(filter));
 
   return (
     <section id="projects" className="relative py-20 lg:py-28">
@@ -50,10 +50,11 @@ export default function Projects() {
                   <button
                     key={cat}
                     onClick={() => setFilter(cat)}
+                    aria-pressed={filter === cat}
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                       filter === cat
                         ? 'bg-accent-500 text-white'
-                        : 'bg-white border border-ink-100 text-ink-600 hover:border-accent-400 hover:text-accent-500'
+                        : 'bg-white border border-ink-100 text-ink-600 hover:border-accent-500 hover:text-accent-500'
                     }`}
                   >
                     {cat}
@@ -95,9 +96,12 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
         <div className="relative sm:col-span-3 aspect-[16/10] sm:aspect-auto overflow-hidden [direction:ltr]">
           <img
             src={project.image}
-            alt={project.title}
+            alt={`Screenshot of ${project.title} website`}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
+            decoding="async"
+            width={1080}
+            height={810}
           />
           {/* Multiple category badges (max 3) */}
           <div className="absolute top-3 left-3 right-3 flex flex-wrap gap-1.5">
@@ -115,8 +119,8 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
         {/* Content */}
         <div className="sm:col-span-2 p-5 lg:p-6 flex flex-col justify-center [direction:ltr]">
           <div className="flex items-center gap-2 mb-2">
-            <Calendar size={12} className="text-ink-400" />
-            <span className="text-xs text-ink-400 font-medium">{project.year}</span>
+            <Calendar size={12} className="text-ink-500" aria-hidden="true" />
+            <span className="text-xs text-ink-500 font-medium">{project.year}</span>
           </div>
           <h3 className="font-display font-bold text-lg text-ink-900 mb-2 group-hover:text-accent-500 transition-colors">
             {project.title}
@@ -140,7 +144,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
             }}
             className="inline-flex items-center gap-1 text-sm font-semibold text-accent-500 hover:gap-2 transition-all"
           >
-            View Project <ArrowUpRight size={14} />
+            Ask about a similar project <ArrowUpRight size={14} aria-hidden="true" />
           </a>
         </div>
       </div>

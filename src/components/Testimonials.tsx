@@ -1,20 +1,30 @@
 import { useState, useEffect } from 'react';
-import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Star, Quote, ChevronLeft, ChevronRight, Pause, Play } from 'lucide-react';
 import { testimonials } from '@/data';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 export default function Testimonials() {
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [hovered, setHovered] = useState(false);
   const { ref, visible } = useScrollReveal();
 
   useEffect(() => {
-    if (paused) return;
+    if (paused || hovered) return;
     const timer = setInterval(() => {
       setActive((prev) => (prev + 1) % testimonials.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, [paused]);
+  }, [hovered, paused]);
+
+  useEffect(() => {
+    const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const updatePauseState = () => setPaused(motionPreference.matches);
+
+    updatePauseState();
+    motionPreference.addEventListener('change', updatePauseState);
+    return () => motionPreference.removeEventListener('change', updatePauseState);
+  }, []);
 
   const next = () => setActive((prev) => (prev + 1) % testimonials.length);
   const prev = () => setActive((prev) => (prev - 1 + testimonials.length) % testimonials.length);
@@ -52,10 +62,10 @@ export default function Testimonials() {
                     }`}
                   >
                     <div className="flex items-center gap-2">
-                      <img src={t.avatar} alt={t.name} className="w-7 h-7 shrink-0 rounded-full object-cover" />
+                      <img src={t.avatar} alt="" width={28} height={28} className="w-7 h-7 shrink-0 rounded-full object-cover" />
                       <div className="min-w-0">
                         <div className="text-xs font-semibold text-ink-900 truncate">{t.name}</div>
-                        <div className="text-[10px] text-ink-400 truncate">{t.role}</div>
+                        <div className="text-[10px] text-ink-500 truncate">{t.role}</div>
                       </div>
                     </div>
                   </button>
@@ -66,8 +76,8 @@ export default function Testimonials() {
 
           {/* Right: Testimonial display */}
           <div ref={ref} className={`lg:col-span-8 ${visible ? 'animate-fade-up' : 'opacity-0'}`}
-            onMouseEnter={() => setPaused(true)}
-            onMouseLeave={() => setPaused(false)}
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
           >
             <div className="relative bg-white rounded-3xl p-8 lg:p-10 shadow-lg border border-ink-100">
               <Quote size={40} className="absolute top-6 right-8 text-accent-500/10" />
@@ -89,20 +99,31 @@ export default function Testimonials() {
                 <div className="flex items-center gap-3">
                   <img
                     src={testimonials[active].avatar}
-                    alt={testimonials[active].name}
+                    alt=""
+                    width={48}
+                    height={48}
                     className="w-12 h-12 rounded-full object-cover ring-2 ring-accent-500/20"
                   />
                   <div>
                     <div className="font-display font-semibold text-ink-900">
                       {testimonials[active].name}
                     </div>
-                    <div className="text-sm text-ink-400">{testimonials[active].role}</div>
+                    <div className="text-sm text-ink-500">{testimonials[active].role}</div>
                   </div>
                 </div>
               </div>
 
               {/* Nav */}
               <div className="flex items-center justify-between mt-6 pt-5 border-t border-ink-100">
+                <button
+                  type="button"
+                  onClick={() => setPaused((current) => !current)}
+                  className="inline-flex min-h-9 items-center gap-2 rounded-lg border border-ink-100 px-3 text-xs font-medium text-ink-700 hover:border-accent-500 hover:text-accent-500"
+                  aria-label={paused ? 'Resume testimonial rotation' : 'Pause testimonial rotation'}
+                >
+                  {paused ? <Play size={14} aria-hidden="true" /> : <Pause size={14} aria-hidden="true" />}
+                  {paused ? 'Play' : 'Pause'}
+                </button>
                 <div className="flex gap-1.5">
                   {testimonials.map((_, i) => (
                     <button
@@ -118,14 +139,14 @@ export default function Testimonials() {
                 <div className="flex gap-2">
                   <button
                     onClick={prev}
-                    className="w-9 h-9 rounded-lg border border-ink-100 flex items-center justify-center text-ink-600 hover:text-accent-500 hover:border-accent-400 transition-all"
+                    className="w-9 h-9 rounded-lg border border-ink-100 flex items-center justify-center text-ink-600 hover:text-accent-500 hover:border-accent-500 transition-all"
                     aria-label="Previous"
                   >
                     <ChevronLeft size={16} />
                   </button>
                   <button
                     onClick={next}
-                    className="w-9 h-9 rounded-lg border border-ink-100 flex items-center justify-center text-ink-600 hover:text-accent-500 hover:border-accent-400 transition-all"
+                    className="w-9 h-9 rounded-lg border border-ink-100 flex items-center justify-center text-ink-600 hover:text-accent-500 hover:border-accent-500 transition-all"
                     aria-label="Next"
                   >
                     <ChevronRight size={16} />

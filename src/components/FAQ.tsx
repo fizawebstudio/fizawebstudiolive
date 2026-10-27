@@ -80,6 +80,8 @@ function FAQItem({
       <button
         onClick={onToggle}
         className="w-full flex items-center justify-between gap-4 p-5 text-left"
+        aria-expanded={isOpen}
+        aria-controls={`faq-answer-${faq.id}`}
       >
         <span className={`font-display font-semibold text-base transition-colors ${
           isOpen ? 'text-accent-500' : 'text-ink-900'
@@ -89,10 +91,12 @@ function FAQItem({
         <div className={`shrink-0 w-7 h-7 rounded-lg flex items-center justify-center transition-all duration-300 ${
           isOpen ? 'bg-accent-500 text-white' : 'bg-ink-100 text-ink-500'
         }`}>
-          {isOpen ? <Minus size={14} /> : <Plus size={14} />}
+          {isOpen ? <Minus size={14} aria-hidden="true" /> : <Plus size={14} aria-hidden="true" />}
         </div>
       </button>
       <div
+        id={`faq-answer-${faq.id}`}
+        aria-hidden={!isOpen}
         className={`overflow-hidden transition-all duration-400 ${
           isOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'
         }`}

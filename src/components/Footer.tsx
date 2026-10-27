@@ -42,7 +42,7 @@ export default function Footer() {
           <div className="md:col-span-5 space-y-3">
             <a href="#home" className="flex items-center gap-2.5 group w-fit">
               <img
-                src="/logo.png.png"
+                src="/logo.png.webp"
                 alt="Fiza Web Studio"
                 className="w-40 h-auto object-contain transition-transform group-hover:scale-[1.02]"
               />
@@ -56,7 +56,7 @@ export default function Footer() {
                   key={i}
                   href={s.href}
                   aria-label={s.label}
-                  className="w-9 h-9 rounded-lg border border-ink-100 flex items-center justify-center text-ink-500 hover:text-accent-500 hover:border-accent-400 transition-colors duration-300"
+                  className="w-9 h-9 rounded-lg border border-ink-100 flex items-center justify-center text-ink-500 hover:text-accent-500 hover:border-accent-500 transition-colors duration-300"
                 >
                   <s.icon size={16} />
                 </a>
@@ -108,13 +108,13 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6">
-          <p className="text-xs text-ink-400">
+          <p className="text-xs text-ink-500">
             © 2026 Fiza Web Studio. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
              <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="w-9 h-9 rounded-lg border border-ink-100 flex items-center justify-center text-ink-500 hover:text-accent-500 hover:border-accent-400 transition-colors"
+              className="w-9 h-9 rounded-lg border border-ink-100 flex items-center justify-center text-ink-500 hover:text-accent-500 hover:border-accent-500 transition-colors"
               aria-label="Back to top"
             >
               <ArrowUp size={16} />

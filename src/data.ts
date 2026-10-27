@@ -6,7 +6,7 @@ export const services = [
     description: 'Build modern, responsive websites for businesses and professionals with clean layouts, user-friendly navigation and reliable functionality tailored to your specific goals.',
     features: ['Custom Website Development','User-Friendly Navigation', 'Responsive Improvements', 'Content Restructuring', 'Modern Web Technologies'],
     price: 'Starting at custom quote',
-    image: 'services/Web-Development.webp',
+    image: '/services/Web-Development.webp',
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const services = [
     description: 'Professional WordPress websites for businesses, corporate companies and personal brands, built with responsive layouts, clear structure and easy content management.',
     features: ['Business & Corporate Websites','Blog Setup', 'Responsive WordPress Design', 'Elementor, Divi & Avada', 'SEO & Performance Optimization'],
     price: 'Starting at custom quote',
-    image: 'services/wordpress.jpg',
+    image: '/services/wordpress.webp',
   },
   {
     id: 3,
@@ -24,7 +24,7 @@ export const services = [
     description: 'Transform outdated websites into modern, professional digital experiences with improved layouts, refreshed visuals and responsive designs that make your business stand out.',
     features: ['Modern UI & Layout Improvements', 'Responsive Improvements', 'Content Restructuring', 'SEO-Friendly Structure','Improved User Experience'],
     price: 'Starting at custom quote',
-    image: '/services/redesign.jpg',
+    image: '/services/redesign.webp',
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ export const services = [
     description: 'High-converting landing pages designed to showcase your offer, highlight key benefits and encourage visitors to take action through clear content and strategic layouts.',
     features: ['Business Landing Pages', 'Lead Generation', 'Conversion-Focused Layout', 'Mobile Responsive Design'],
     price: 'Starting at custom quote',
-    image: '/services/landing.jpg',
+    image: '/services/landing.webp',
   },
    {
     id: 5,
@@ -42,7 +42,7 @@ export const services = [
     description: 'Develop tailored websites for businesses and professionals with modern designs, responsive layouts and functional features that support your goals and online presence.',
     features: ['Custom Website Solutions', 'Responsive Website Development', 'Business Website Design', 'Custom Feature Implementation'],
     price: 'Starting at custom quote',
-    image: '/services/marketing-agency-western-sydney.jpg',
+    image: '/services/marketing-agency-western-sydney.webp',
   },
   {
     id: 6,
@@ -51,7 +51,7 @@ export const services = [
     description: 'Professional Shopify stores with responsive storefronts, organized product layouts and a smooth shopping experience for growing online businesses worldwide.',
     features: ['Shopify Store Setup', 'Product & Collection Pages', 'Theme Customization', 'Mobile-Friendly Store Design'],
     price: 'Starting at custom quote',
-    image: '/services/shopify.jpg',
+    image: '/services/shopify.webp',
   },
   {
     id: 7,
@@ -60,7 +60,7 @@ export const services = [
     description: 'Scalable WooCommerce stores with organized product layouts, easy navigation and a seamless shopping experience for online customers.',
     features: ['WooCommerce Development', 'Product & Category Setup', 'Product Variations Setup' ,'Shopping Cart & Checkout', 'Responsive Store Design'],
     price: 'Starting at custom quote',
-    image: '/services/eCommerce-Development.jpg',
+    image: '/services/eCommerce-Development.webp',
   },
   {
     id: 8,
@@ -69,7 +69,7 @@ export const services = [
     description: 'Build professional Wix websites for small businesses, professionals and personal brands with flexible layouts, engaging visuals and easy-to-manage content.',
     features: ['Wix Business Websites', 'Custom Wix Page Design', 'Responsive Website Layouts', 'Wix Content & Section Updates'],
     price: 'Starting at custom quote',
-    image: '/services/wix.jpg',
+    image: '/services/wix.webp',
   },
   {
     id: 9,
@@ -78,7 +78,7 @@ export const services = [
     description: 'Convert PSD designs into responsive, functional web pages while maintaining the original design direction, visual consistency and layout details.',
     features: ['PSD to WordPress Conversion', 'Pixel-Accurate Design', 'Responsive Page Development', 'Design & Typography Matching','Cross-Browser Compatibility'],
     price: 'Starting at custom quote',
-    image: '/services/design-in-photoshop.png',
+    image: '/services/design-in-photoshop.webp',
   },
   {
     id: 10,
@@ -87,7 +87,7 @@ export const services = [
     description: 'Keep your website running smoothly with regular updates, troubleshooting and technical fixes to resolve common issues and maintain reliable website functionality.',
     features: ['WordPress Updates & Maintenance', 'Plugin & Theme Conflict Fixes', 'Layout Errors & Bug Fixes', 'Website Backup & Recovery Support', 'Website Functionality Testing'],
     price: 'Starting at custom quote',
-    image: '/services/critical-error.png',
+    image: '/services/critical-error.webp',
   },
   {
     id: 11,
@@ -96,7 +96,7 @@ export const services = [
     description: 'Improve your website’s technical and on-page seo structure, metadata, image optimization, internal linking and speed-focused enhancements for a smoother browsing experience.',
     features: ['Website Speed Optimization','On-Page SEO Improvements', 'Technical SEO Setup', 'Image & Asset Optimization', 'Mobile Performance Improvements'],
     price: 'Starting at custom quote',
-    image: '/services/seo.jpg',
+    image: '/services/seo.webp',
   },
   {
     id: 12,
@@ -105,7 +105,7 @@ export const services = [
     description: 'Move your website to a new hosting provider, domain or platform with careful file and database transfers, configuration checks and functionality testing procedures.',
     features: ['Website & Hosting Migration', 'WordPress Site Transfers', 'Domain & URL Configuration', 'Post-Migration Testing', 'Website Backup Transfer'],
     price: 'Starting at custom quote',
-    image: '/services/migrate.png',
+    image: '/services/migrate.webp',
   },
   {
     id: 14,
@@ -114,7 +114,7 @@ export const services = [
     description: 'Design and customize Blogger websites with attractive templates, structured blog layouts and easy navigation to publish content and engage readers effectively.',
     features: ['Blogger theme Customization', 'Mobile-Friendly Templates','Post & Category Setup', 'Navigation & Content Setup'],
     price: 'Starting at custom quote',
-    image: '/services/blog.jpg',
+    image: '/services/blog.webp',
   },
   {
     id: 15,
@@ -123,7 +123,7 @@ export const services = [
     description: 'Professional, SEO-optimized content with relevant keywords, clear structure and engaging copy to improve readability, strengthen search visibility and connect with your target audience.',
     features: ['SEO Blog Article Writing', 'Keyword Research & Placement','Website Content Optimization', 'Meta Titles & Descriptions'],
     price: 'Starting at custom quote',
-    image: '/services/content.jpg',
+    image: '/services/content.webp',
   },
   {
     id: 16,
@@ -132,7 +132,7 @@ export const services = [
     description: 'Create and set up digital product experiences that make it easy to showcase, sell and deliver downloadable resources through a professional online storefront.',
     features: ['eBook & Digital Download Stores', 'Social Media Templates & Digital Planners', 'Digital Product Page Setup', 'Online Payment & Delivery Setup'],
     price: 'Starting at custom quote',
-    image: '/services/ebook.jpg',
+    image: '/services/ebook.webp',
   },
   
 ];
@@ -164,7 +164,7 @@ export const projects: Project[] = [
     categories: ['Web Development', 'WordPress'],
     tags: ['Business Website', 'Digital Marketing', 'Marketing Agency', 'SEO Services'],
     year: '2025',
-    image: '/projects/1-1.png',
+    image: '/projects/1-1.webp',
     description: 'A professional digital marketing agency website designed to showcase services, strengthen brand credibility, and provide a seamless experience for potential clients.',
   },
   {
@@ -173,26 +173,26 @@ export const projects: Project[] = [
     categories: ['Web Development', 'WordPress'],
     tags: ['Healthcare Website', 'Psychology', 'Therapy','Mental Health' , 'Health & Wellness'],
     year: '2025',
-    image: '/projects/2.png',
+    image: '/projects/2.webp',
     description: 'Professional counseling website designed with a calm, user-friendly layout to present therapy services, build trust, and help visitors easily find relevant support and contact information.',
   },
   {
     id: 3,
-    title: 'GymFitness',
-    categories: ['Web Development', 'WordPress'],
-    tags: ['Gym & Fitness Website', 'Business Website', 'Fitness Training', 'Membership Website'],
-    year: '2024',
-    image: '/projects/3.png',
-    description: 'A modern gym website showcasing fitness programs, workout facilities, and membership services through an engaging layout that encourages visitors to take the next step in their fitness journey.',
-  },
-  {
-    id: 4,
     title: 'AuraSkin Co.',
     categories: ['Web Development', 'Shopify'],
     tags: ['Shopify Store', 'Skincare Website', 'eCommerce Website', 'Beauty & Skincare'],
     year: '2024',
-    image: '/projects/4.png',
+    image: '/projects/4.webp',
     description: 'Modern Shopify skincare store featuring elegant product displays, a calming sage-green and beige palette, and a responsive shopping experience. Access the website using the provided password-protected link.',
+  },
+  {
+    id: 4,
+    title: 'GymFitness',
+    categories: ['Web Development', 'WordPress'],
+    tags: ['Gym & Fitness Website', 'Business Website', 'Fitness Training', 'Membership Website'],
+    year: '2024',
+    image: '/projects/3.webp',
+    description: 'A modern gym website showcasing fitness programs, workout facilities, and membership services through an engaging layout that encourages visitors to take the next step in their fitness journey.',
   },
 ];
 

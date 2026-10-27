@@ -1,7 +1,4 @@
-import { useEffect, useState } from 'react';
-import { ArrowRight, ArrowUpRight, Monitor, SearchCheck, ShoppingCart, Smartphone, LayoutTemplate } from 'lucide-react';
-
-const roles = ['WordPress Developer', 'Shopify Developer', 'Freelance Web Developer', 'eCommerce Website Developer'];
+import { ArrowRight, ArrowUpRight, Monitor, SearchCheck, ShoppingCart, LayoutTemplate } from 'lucide-react';
 
 const highlights = [
   {
@@ -36,32 +33,6 @@ const subText =
   'text-ink-500 text-[11px] sm:text-[12px] min-[1023px]:max-[1300px]:text-[11px] leading-[1.2rem]';
 
 export default function Hero({ id = 'home' }: { id?: string }) {
-  const [textIndex, setTextIndex] = useState(0);
-  const [displayText, setDisplayText] = useState('');
-  const [isDeleting, setIsDeleting] = useState(false);
-
-  useEffect(() => {
-    const current = roles[textIndex];
-    let timeout: ReturnType<typeof setTimeout>;
-
-    if (!isDeleting && displayText.length < current.length) {
-      timeout = setTimeout(() => {
-        setDisplayText(current.slice(0, displayText.length + 1));
-      }, 80);
-    } else if (!isDeleting && displayText.length === current.length) {
-      timeout = setTimeout(() => setIsDeleting(true), 2000);
-    } else if (isDeleting && displayText.length > 0) {
-      timeout = setTimeout(() => {
-        setDisplayText(current.slice(0, displayText.length - 1));
-      }, 40);
-    } else if (isDeleting && displayText.length === 0) {
-      setIsDeleting(false);
-      setTextIndex((prev) => (prev + 1) % roles.length);
-    }
-
-    return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, textIndex]);
-
   return (
     <section id={id} className="relative min-h-screen flex items-center pt-32 pb-16 overflow-hidden">
       {/* Animated background orbs */}
@@ -79,10 +50,10 @@ export default function Hero({ id = 'home' }: { id?: string }) {
               Freelance Web Developer
             </p>
             <h1 className="w-[90%] lg:w-[calc(90%+3rem)] font-display font-bold text-[clamp(1.5rem,7vw,2.25rem)] lg:text-[clamp(2.25rem,3vw,2.75rem)] leading-[1.3] tracking-tight text-ink-900 animate-fade-up animation-delay-100">
-              Websites That Help Your <span className="text-accent-500 hover:scale-105 transition-transform duration-300 cursor-default">Business Grow </span>
+              Websites That Help Your               <span className="text-accent-500">Business Grow </span>
             </h1>
 
-            <p className="text-base text-ink-400 max-w-xl leading-relaxed animate-fade-up animation-delay-200">
+            <p className="text-base text-ink-500 max-w-xl leading-relaxed animate-fade-up animation-delay-200">
               I’m Fiza Asif, a freelance web developer specializing in WordPress, Shopify and eCommerce development. I build modern, responsive and SEO-friendly websites that help businesses present their brand professionally and give customers a better online experience.
             </p>
 
@@ -104,7 +75,7 @@ export default function Hero({ id = 'home' }: { id?: string }) {
                   e.preventDefault();
                   document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
                 }}
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-ink-200 text-ink-700 font-semibold text-sm hover:border-accent-400 hover:text-accent-500 hover:-translate-y-0.5 transition-all duration-300"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-ink-200 text-ink-700 font-semibold text-sm hover:border-accent-500 hover:text-accent-500 hover:-translate-y-0.5 transition-all duration-300"
               >
                 Start a Project
                 <ArrowRight size={18} />
@@ -129,7 +100,7 @@ export default function Hero({ id = 'home' }: { id?: string }) {
                     <div className="font-display font-bold text-sm lg:text-base text-ink-900 hover:text-accent-500 transition-colors duration-300">
                       {title}
                     </div>
-                    <div className="text-xs text-ink-400 mt-1 font-medium">
+                    <div className="text-xs text-ink-500 mt-1 font-medium">
                       {description}
                     </div>
                   </div>
@@ -139,15 +110,16 @@ export default function Hero({ id = 'home' }: { id?: string }) {
           </div>
 
           {/* Right visual */}
-          <div className="lg:col-span-5 relative animate-scale-in animation-delay-300">
+          <div className="lg:col-span-5 relative">
             <div className="relative w-full max-w-[34rem] mx-auto aspect-square">
               <img
-                src="/image.png"
+                src="/image.webp"
                 alt="Fiza Asif, freelance web developer"
                 className="absolute inset-0 z-10 h-full w-full object-contain"
                 width={1153}
                 height={1148}
                 loading="eager"
+                decoding="async"
               />
 
               {/* WordPress – top left */}
