@@ -23,7 +23,11 @@ export default function Contact() {
     setStatus('sending');
 
     try {
-      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://ppjrzmessketofsmmopj.supabase.co';
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL?.trim();
+      if (!supabaseUrl) {
+        throw new Error('VITE_SUPABASE_URL is not configured');
+      }
+
       const apiUrl = `${supabaseUrl}/functions/v1/send-contact-email`;
 
       const response = await fetch(apiUrl, {
@@ -40,7 +44,8 @@ export default function Contact() {
       setStatus(result.emailSent === false ? 'saved' : 'sent');
       setForm({ name: '', email: '', phone: '', services: '', message: '' });
       setTimeout(() => setStatus('idle'), 5000);
-    } catch {
+    } catch (error) {
+      console.error('Contact form submission failed:', error);
       setStatus('error');
       setTimeout(() => setStatus('idle'), 5000);
     }

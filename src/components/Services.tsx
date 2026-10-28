@@ -94,7 +94,7 @@ function ServiceCard({
 
         {/* Icon badge */}
         <div className="absolute bottom-3 left-4 w-12 h-12 rounded-xl bg-white shadow-md border-ink-100 flex items-center justify-center group-hover:bg-accent-500 transition-colors duration-300">
-          <Icon size={22} className="text-accent-500 group-hover:text-ink-900 transition-colors" aria-hidden="true" />
+          <Icon size={22} className="text-accent-500 group-hover:text-white transition-colors" aria-hidden="true" />
         </div>
       </div>
 
