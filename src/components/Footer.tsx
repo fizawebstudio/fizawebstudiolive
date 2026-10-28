@@ -1,12 +1,22 @@
-import { ArrowUp, Dribbble, Github, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { ArrowUp, Linkedin } from 'lucide-react';
+import { siInstagram, siPinterest, siTiktok, siX, siYoutube } from 'simple-icons';
+import type { SimpleIcon } from 'simple-icons';
 import { navLinks } from '@/data';
 
+const brandIcon = (icon: SimpleIcon) => (
+  <svg aria-hidden="true" viewBox="0 0 24 24" className="w-4 h-4 fill-current">
+    <path d={icon.path} />
+  </svg>
+);
+
 const socials = [
-  { icon: Dribbble, href: '#', label: 'Dribbble' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-  { icon: Github, href: '#', label: 'GitHub' },
+  { icon: <Linkedin size={16} aria-hidden="true" />, href: 'https://www.linkedin.com/in/fizawebstudio/', label: 'LinkedIn' },
+  { icon: <span aria-hidden="true" className="font-display text-base font-extrabold leading-none">F</span>, href: 'https://www.fiverr.com/fizawebstd/design-and-develop-a-professional-wordpress-website?ref_ctx_id=cde692bee7aa4dd0b27a0dfcf785f940&pckg_id=1&source=seller_page', label: 'Fiverr' },
+  { icon: brandIcon(siInstagram), href: 'https://www.instagram.com/fizawebstudio/', label: 'Instagram' },
+  { icon: brandIcon(siPinterest), href: 'https://www.pinterest.com/fizawebstudio/', label: 'Pinterest' },
+  { icon: brandIcon(siX), href: 'https://x.com/FizaWebStudio', label: 'X' },
+  { icon: brandIcon(siTiktok), href: 'https://www.tiktok.com/@fizawebstudio', label: 'TikTok' },
+  { icon: brandIcon(siYoutube), href: 'https://www.youtube.com/@FizaWebStudio', label: 'YouTube' },
 ];
 
 export default function Footer() {
@@ -51,14 +61,16 @@ export default function Footer() {
               Freelance web developer helping businesses and online brands build professional websites, eCommerce stores and landing pages, with expertise in WordPress, Shopify, Wix, website redesign, SEO and website optimization.
             </p>
             <div className="flex gap-2">
-              {socials.map((s, i) => (
+              {socials.map((s) => (
                 <a
-                  key={i}
+                  key={s.label}
                   href={s.href}
                   aria-label={s.label}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-9 h-9 rounded-lg border border-ink-100 flex items-center justify-center text-ink-500 hover:text-accent-500 hover:border-accent-500 transition-colors duration-300"
                 >
-                  <s.icon size={16} />
+                  {s.icon}
                 </a>
               ))}
             </div>

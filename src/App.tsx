@@ -9,6 +9,7 @@ import Testimonials from '@/components/Testimonials';
 import FAQ from '@/components/FAQ';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import SocialRail from '@/components/SocialRail';
 
 function ScrollProgress() {
   const progressRef = useRef<HTMLDivElement>(null);
@@ -49,6 +50,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-white text-ink-900">
       <ScrollProgress />
+      <SocialRail />
       <Navbar />
       <main id="main-content" tabIndex={-1}>
         <Hero />
