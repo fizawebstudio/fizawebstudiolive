@@ -41,7 +41,7 @@ export default function SocialRail() {
         Follow me on
       </span>
       <span aria-hidden="true" className="h-8 w-px bg-ink-200" />
-      <div className="flex flex-col items-center gap-1 rounded-full bg-white/95 p-1.5 shadow-lg ring-1 ring-ink-100/80">
+      <div className="flex flex-col items-center gap-1 rounded-full bg-white/95 py-1 px-0.5  shadow-lg ring-1 ring-ink-100/80">
         {socials.map((social) => (
           <a
             key={social.label}
