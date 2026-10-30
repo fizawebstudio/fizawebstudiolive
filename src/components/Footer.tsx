@@ -11,7 +11,7 @@ const brandIcon = (icon: SimpleIcon) => (
 
 const socials = [
   { icon: <Linkedin size={16} aria-hidden="true" />, href: 'https://www.linkedin.com/in/fizawebstudio/', label: 'LinkedIn' },
-  { icon: <span aria-hidden="true" className="font-display text-base font-extrabold leading-none">F</span>, href: 'https://www.fiverr.com/fizawebstd/design-and-develop-a-professional-wordpress-website?ref_ctx_id=cde692bee7aa4dd0b27a0dfcf785f940&pckg_id=1&source=seller_page', label: 'Fiverr' },
+  { icon: <span aria-hidden="true" className="font-display text-base font-extrabold leading-none">fi</span>, href: 'https://www.fiverr.com/fizawebstd/design-and-develop-a-professional-wordpress-website?ref_ctx_id=cde692bee7aa4dd0b27a0dfcf785f940&pckg_id=1&source=seller_page', label: 'Fiverr' },
   { icon: brandIcon(siInstagram), href: 'https://www.instagram.com/fizawebstudio/', label: 'Instagram' },
   { icon: brandIcon(siPinterest), href: 'https://www.pinterest.com/fizawebstudio/', label: 'Pinterest' },
   { icon: brandIcon(siX), href: 'https://x.com/FizaWebStudio', label: 'X' },

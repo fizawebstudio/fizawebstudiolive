@@ -15,7 +15,7 @@ const socials = [
     label: 'LinkedIn',
   },
   {
-    icon: <span aria-hidden="true" className="font-display text-xl font-extrabold leading-none">F</span>,
+    icon: <span aria-hidden="true" className="font-display text-xl font-extrabold leading-none">fi</span>,
     href: 'https://www.fiverr.com/fizawebstd/design-and-develop-a-professional-wordpress-website?ref_ctx_id=cde692bee7aa4dd0b27a0dfcf785f940&pckg_id=1&source=seller_page',
     label: 'Fiverr',
   },
@@ -35,7 +35,7 @@ export default function SocialRail() {
   return (
     <aside
       aria-label="Social media"
-      className="fixed left-3 top-1/2 z-40 hidden -translate-y-1/2 flex-col items-center gap-3 md:flex"
+      className="fixed left-3 top-1/2 z-40 hidden -translate-y-1/2 flex-col items-center gap-3 md:flex max-[1350px]:!hidden"
     >
       <span className="[writing-mode:vertical-rl] rotate-180 text-[10px] font-semibold uppercase tracking-[0.2em] text-ink-500">
         Follow me on
