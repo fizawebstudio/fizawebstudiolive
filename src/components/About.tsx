@@ -22,7 +22,7 @@ export default function About() {
                 <img
                   src="/abouts.webp"
                   alt="Fiza Asif working at her laptop"
-                  className="h-full w-full rounded-3xl object-cover object-left"
+                  className="h-auto w-full rounded-3xl object-cover object-left"
                   width={768}
                   height={1152}
                   loading="lazy"
