@@ -54,8 +54,7 @@ export default function Hero({ id = 'home' }: { id?: string }) {
             </h1>
 
             <p className="text-base text-ink-500 max-w-xl leading-relaxed animate-fade-up animation-delay-200">
-              I’m Fiza Asif, a freelance web developer specializing in WordPress, Shopify and eCommerce development. I build modern, responsive and SEO-friendly websites that help businesses present their brand professionally and give customers a better online experience.
-            </p>
+              I'm Fiza Asif, a freelance web developer specializing in WordPress, Shopify, WooCommerce and Wix website development. I create modern, responsive and SEO-friendly websites that help businesses establish a strong online presence, attract customers and grow their brand.            </p>
 
             <div className="flex flex-wrap items-center gap-4 animate-fade-up animation-delay-300">
               <a
@@ -66,7 +65,7 @@ export default function Hero({ id = 'home' }: { id?: string }) {
                 }}
                 className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-accent-500 text-white font-semibold text-sm hover:bg-accent-600 hover:shadow-lg hover:shadow-accent-500/30 hover:-translate-y-0.5 transition-all duration-300"
               >
-                View My Work
+                View My Projects
                 <ArrowUpRight size={18} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
               <a
