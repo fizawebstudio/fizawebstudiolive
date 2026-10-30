@@ -54,8 +54,8 @@ export default function Hero({ id = 'home' }: { id?: string }) {
             </h1>
 
             <p className="text-base text-ink-500 max-w-xl leading-relaxed animate-fade-up animation-delay-200">
-              I'm Fiza Asif, a freelance web developer specializing in WordPress, Shopify, WooCommerce and Wix website development. I create modern, responsive and SEO-friendly websites that help businesses establish a strong online presence, attract customers and grow their brand.            </p>
-
+              I'm Fiza Asif, a freelance web developer with 6 years of experience specializing in WordPress, Shopify, WooCommerce, and Wix website development. I create modern, responsive, and SEO-friendly websites that help businesses establish a strong online presence, attract customers, and grow their brands.
+            </p>
             <div className="flex flex-wrap items-center gap-4 animate-fade-up animation-delay-300">
               <a
                 href="#projects"
